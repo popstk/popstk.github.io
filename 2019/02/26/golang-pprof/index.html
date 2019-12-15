@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="popstk的博客">
+    <meta name="keyword" content="popstk">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Golang pprof使用 - popstk的博客 | popstk&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 有时摸鱼，有时写代码 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Mark</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引"><span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#runtime-pprof"><span class="toc-text">runtime/pprof</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#net-http-pprof"><span class="toc-text">net/http/pprof</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能列表"><span class="toc-text">功能列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#go-tool-pprof"><span class="toc-text">go tool pprof</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令交互模式"><span class="toc-text">命令交互模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#火焰图"><span class="toc-text">火焰图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 有时摸鱼，有时写代码 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Golang pprof使用
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-02-26 16:06:10</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#go" title="go">go</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#pprof" title="pprof">pprof</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#性能分析" title="性能分析">性能分析</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h4 id="runtime-pprof"><a href="#runtime-pprof" class="headerlink" title="runtime/pprof"></a>runtime/pprof</h4><h4 id="net-http-pprof"><a href="#net-http-pprof" class="headerlink" title="net/http/pprof"></a>net/http/pprof</h4><blockquote>
+<p>Package pprof serves via its HTTP server runtime profiling data in the format expected by the pprof visualization tool.</p>
+<p>The package is typically only imported for the side effect of registering its HTTP handlers. The handled paths all begin with /debug/pprof/.</p>
+<p>The handled paths all begin with <strong>/debug/pprof/</strong>.</p>
+<p>To use pprof, link this package into your program:</p>
+<p>import _ “net/http/pprof”</p>
+</blockquote>
+<p>这个包只是封装上面的包，以http server的形式提供功能。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /net/http/pprof/pprof.go</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">"/debug/pprof/"</span>, Index)</span><br><span class="line">	http.HandleFunc(<span class="string">"/debug/pprof/cmdline"</span>, Cmdline)</span><br><span class="line">	http.HandleFunc(<span class="string">"/debug/pprof/profile"</span>, Profile)</span><br><span class="line">	http.HandleFunc(<span class="string">"/debug/pprof/symbol"</span>, Symbol)</span><br><span class="line">	http.HandleFunc(<span class="string">"/debug/pprof/trace"</span>, Trace)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用<code>import _ &quot;net/http/pprof&quot;</code>后，会添加<code>/debug/pprof/</code>,如果本身没有启动http server或者使用第三方的http库，需要手动添加代码启动http server。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">	log.Println(http.ListenAndServe(<span class="string">"localhost:6060"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<h2 id="功能列表"><a href="#功能列表" class="headerlink" title="功能列表"></a>功能列表</h2><ul>
+<li>profile</li>
+</ul>
+<p>CPU profile. You can specify the duration in the seconds GET parameter. After you get the profile file, use the go tool pprof command to investigate the profile.</p>
+<p>CPU 采样分析，按照一定的频率采集所监听的应用程序 CPU（含寄存器）的使用情况，可确定应用程序在主动消耗 CPU 周期时花费时间的位置</p>
+<ul>
+<li>trace</li>
+</ul>
+<p>A trace of execution of the current program. You can specify the duration in the seconds GET parameter. After you get the trace file, use the go tool trace command to investigate the trace</p>
+<ul>
+<li>block</li>
+</ul>
+<p>Stack traces that led to blocking on synchronization primitives</p>
+<p>阻塞分析，记录 goroutine 阻塞等待同步（包括定时器通道）的位置</p>
+<ul>
+<li>cmdline</li>
+</ul>
+<p>The command line invocation of the current program</p>
+<p>查看当前程序命令行</p>
+<ul>
+<li>goroutine</li>
+</ul>
+<p>Stack traces of all current goroutines</p>
+<p>当前所有协程的堆栈跟踪</p>
+<ul>
+<li>mutex</li>
+</ul>
+<p>Stack traces of holders of contended mutexes</p>
+<p>互斥锁分析，报告互斥锁的竞争情况</p>
+<ul>
+<li>threadcreate</li>
+</ul>
+<p>Stack traces that led to the creation of new OS threads</p>
+<ul>
+<li>allocs</li>
+</ul>
+<p>A sampling of all past memory allocations</p>
+<p>内存分析，目标是对所有对象</p>
+<ul>
+<li>heap</li>
+</ul>
+<p>A sampling of memory allocations of live objects. You can specify the gc GET parameter to run GC before taking the heap sample.</p>
+<p>内存分析，对活动的对象进行堆分配时记录堆栈跟踪，用于监视当前和历史内存使用情况，以及检查内存泄漏。</p>
+<h3 id="go-tool-pprof"><a href="#go-tool-pprof" class="headerlink" title="go tool pprof"></a>go tool pprof</h3><p>使用<code>go tool pprof &lt;source&gt;</code>可以进行性能采集</p>
+<ul>
+<li><p>当<code>&lt;source&gt;</code>是url时，会从url进行采集保存为文件，并进入命令交互模式</p>
+</li>
+<li><p>当<code>&lt;source&gt;</code>是文件时，会自动进入命令交互模式</p>
+</li>
+<li><p>也可以添加 <code>-http</code>使用基于web的交互模式</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go tool pprof http://127.0.0.1:6060/debug/pprof/profile</span><br><span class="line">$ go tool pprof -http=:8080 http://127.0.0.1:6060/debug/pprof/profile</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><p>flat和flat%列代表该函数运行的时间/内存空间和占比</p>
+<p>cum和cum%列代表该函数和子函数的运行时间/内存空间和占比</p>
+<p>sum% 列代表当前行到第一行的flat%的总和</p>
+<h4 id="命令交互模式"><a href="#命令交互模式" class="headerlink" title="命令交互模式"></a>命令交互模式</h4><blockquote>
+<p> web - Visualize graph through web browser</p>
+</blockquote>
+<p>web命令会调用浏览器打开svg格式的可视化图像</p>
+<h4 id="火焰图"><a href="#火焰图" class="headerlink" title="火焰图"></a>火焰图</h4><blockquote>
+<p>火焰图就是看顶层的哪个函数占据的宽度最大。只要有”平顶”（plateaus），就表示该函数可能存在性能问题。</p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://github.com/golang/go/issues/22366" target="_blank" rel="noopener">wsl下pprof未能采集到性能数据</a></p>
+<p><a href="https://github.com/uber/go-torch" target="_blank" rel="noopener">go 1.11自带火焰图go-torch项目已经废弃</a></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="https://github.com/hyper0x/go_command_tutorial/blob/master/0.12.md" target="_blank" rel="noopener">go tool pprof</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2017/09/flame-graph.html" target="_blank" rel="noopener">如何读懂火焰图？</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/popstk">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://popstk.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>

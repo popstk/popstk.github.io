@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Popstk&#39;s Blog</title>
+  <icon>https://www.gravatar.com/avatar/2f58f77d5b516b291563686ed164bd51</icon>
+  <subtitle>有时摸鱼，有时写代码</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.popstk.top/"/>
+  <updated>2019-12-15T06:19:47.458Z</updated>
+  <id>https://blog.popstk.top/</id>
+  
+  <author>
+    <name>Mark</name>
+    <email>onlythen@yeah.net</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://blog.popstk.top/2019/12/15/hello-world/"/>
+    <id>https://blog.popstk.top/2019/12/15/hello-world/</id>
+    <published>2019-12-15T06:19:47.458Z</published>
+    <updated>2019-12-15T06:19:47.458Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP协议之301状态码</title>
+    <link href="https://blog.popstk.top/2019/03/04/http-301/"/>
+    <id>https://blog.popstk.top/2019/03/04/http-301/</id>
+    <published>2019-03-04T14:34:53.000Z</published>
+    <updated>2019-12-15T06:19:47.460Z</updated>
+    
+    <content type="html"><![CDATA[<p>某天访问某个不存在的网站，突然发现被重定向到百度去了。</p><a id="more"></a><p>首先打开全局代理，试了下还是重定向到百度去。打开调试重新进入，可见</p><ul><li>General</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Request URL: http://XX.XXX.com/</span><br><span class="line">Request Method: GET</span><br><span class="line">Status Code: 301 Moved Permanently (from disk cache)</span><br><span class="line">Remote Address: 104.27.141.68:80</span><br><span class="line">Referrer Policy: no-referrer-when-downgrade</span><br></pre></td></tr></table></figure><ul><li>Respond Headers</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 301 Moved Permanently</span><br><span class="line">Date: Mon, 04 Mar 2019 14:40:52 GMT</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Location: http://baidu.com</span><br><span class="line">Server: cloudflare</span><br><span class="line">CF-RAY: 4b249b974c729330-SJC</span><br></pre></td></tr></table></figure><p>301 代表永久重定向</p><blockquote><p>This indefinite caching is only the <em>default</em> caching by these browsers in the absence of Cache-Control headers. The logic is that you are specifying a “permanent” redirect and not giving them any other caching instructions, so they’ll treat it as if you wanted it indefinitely cached.</p></blockquote><p><a href="https://stackoverflow.com/questions/9130422/how-long-do-browsers-cache-http-301s" target="_blank" rel="noopener">https://stackoverflow.com/questions/9130422/how-long-do-browsers-cache-http-301s</a></p><p>如果header没有缓存控制，那么浏览器将按照其意思，永久自动重定向到另一个地址，不再尝试从源地址发送请求。</p><p>看来就是这个原因，解决方法当然可以清空缓存，但是比较粗暴，其实有更好的办法：</p><ul><li>opera、chrome</li></ul><p><code>DevTools-&gt; Settings -&gt; Preferences -&gt; Network</code> 勾上<code>Disable cache(while DevTools is open)</code></p><p>然后重新进入网站即可</p><p><a href="https://salferrarello.com/chrome-clear-redirect-cache/" target="_blank" rel="noopener">https://salferrarello.com/chrome-clear-redirect-cache/</a></p><ul><li>firefox</li></ul><blockquote><p>Locate the site you are redirected from in the History sidebar. Right-click it and select “Forget about this site”.</p></blockquote><p>从历史记录点击忘记这个网站就行了</p><p><a href="https://superuser.com/questions/467999/clear-301-redirect-cache-in-firefox" target="_blank" rel="noopener">https://superuser.com/questions/467999/clear-301-redirect-cache-in-firefox</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;某天访问某个不存在的网站，突然发现被重定向到百度去了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="http" scheme="https://blog.popstk.top/tags/http/"/>
+    
+      <category term="301" scheme="https://blog.popstk.top/tags/301/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang gops使用记要</title>
+    <link href="https://blog.popstk.top/2019/02/28/golang-gops/"/>
+    <id>https://blog.popstk.top/2019/02/28/golang-gops/</id>
+    <published>2019-02-28T09:29:29.000Z</published>
+    <updated>2019-12-15T09:07:00.265Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/google/gops" target="_blank" rel="noopener">gops</a> 一个用于列出和诊断分析系统中正在运行的 Go 程序的命令行工具</p><h2 id="加入agent"><a href="#加入agent" class="headerlink" title="加入agent"></a>加入agent</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line"><span class="string">"log"</span></span><br><span class="line"><span class="string">"time"</span></span><br><span class="line"><span class="string">"github.com/google/gops/agent"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="keyword">if</span> err := agent.Listen(agent.Options&#123;&#125;); err != <span class="literal">nil</span> &#123;</span><br><span class="line">log.Fatal(err)</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">/* 远程模式</span></span><br><span class="line"><span class="comment">    if err := agent.Listen(agent.Options&#123;Addr:":10086"&#125;); err != nil &#123;</span></span><br><span class="line"><span class="comment">log.Fatal(err)</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">time.Sleep(time.Hour)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>默认情况下是本地模式，agent.Options设置Addr字段，可启用远程模式，远程模式通过tcp连接。</p><h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go get -u github.com/google/gops <span class="comment">#安装工具</span></span><br><span class="line">$ gops <span class="comment"># 显示本机上的正在运行的go程序，程序名称后面带了个*的代表嵌入gops agent</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gops pprof-cpu &lt;pid&gt;|&lt;addr&gt; <span class="comment">#采集cpu性能数据，30s</span></span><br><span class="line">$ gops pprof-heap &lt;pid|addr&gt;  <span class="comment">#采集heap性能数据</span></span><br><span class="line">$ gops trace &lt;pid|addr&gt; <span class="comment">#采集trace性能数据，5s</span></span><br></pre></td></tr></table></figure><p>其中pid是本地模式，addr是远程模式</p><p>以上的命令的采集时间，都是不可配置，可见<a href="https://github.com/google/gops/blob/master/agent/agent.go" target="_blank" rel="noopener">这里</a></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="https://shockerli.net/post/golang-tool-gops/" target="_blank" rel="noopener">Go 程序诊断分析工具</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/google/gops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;gops&lt;/a&gt; 一个用于列出和诊断分析系统中正在运行的 Go 程序的命令行工具&lt;/p&gt;
+&lt;h2 id=&quot;加入agent&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="pprof" scheme="https://blog.popstk.top/tags/pprof/"/>
+    
+      <category term="gops" scheme="https://blog.popstk.top/tags/gops/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang pprof使用</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-pprof/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-pprof/</id>
+    <published>2019-02-26T08:06:10.000Z</published>
+    <updated>2019-12-15T06:19:47.454Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h4 id="runtime-pprof"><a href="#runtime-pprof" class="headerlink" title="runtime/pprof"></a>runtime/pprof</h4><h4 id="net-http-pprof"><a href="#net-http-pprof" class="headerlink" title="net/http/pprof"></a>net/http/pprof</h4><blockquote><p>Package pprof serves via its HTTP server runtime profiling data in the format expected by the pprof visualization tool.</p><p>The package is typically only imported for the side effect of registering its HTTP handlers. The handled paths all begin with /debug/pprof/.</p><p>The handled paths all begin with <strong>/debug/pprof/</strong>.</p><p>To use pprof, link this package into your program:</p><p>import _ “net/http/pprof”</p></blockquote><p>这个包只是封装上面的包，以http server的形式提供功能。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /net/http/pprof/pprof.go</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">http.HandleFunc(<span class="string">"/debug/pprof/"</span>, Index)</span><br><span class="line">http.HandleFunc(<span class="string">"/debug/pprof/cmdline"</span>, Cmdline)</span><br><span class="line">http.HandleFunc(<span class="string">"/debug/pprof/profile"</span>, Profile)</span><br><span class="line">http.HandleFunc(<span class="string">"/debug/pprof/symbol"</span>, Symbol)</span><br><span class="line">http.HandleFunc(<span class="string">"/debug/pprof/trace"</span>, Trace)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用<code>import _ &quot;net/http/pprof&quot;</code>后，会添加<code>/debug/pprof/</code>,如果本身没有启动http server或者使用第三方的http库，需要手动添加代码启动http server。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">log.Println(http.ListenAndServe(<span class="string">"localhost:6060"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure><h2 id="功能列表"><a href="#功能列表" class="headerlink" title="功能列表"></a>功能列表</h2><ul><li>profile</li></ul><p>CPU profile. You can specify the duration in the seconds GET parameter. After you get the profile file, use the go tool pprof command to investigate the profile.</p><p>CPU 采样分析，按照一定的频率采集所监听的应用程序 CPU（含寄存器）的使用情况，可确定应用程序在主动消耗 CPU 周期时花费时间的位置</p><ul><li>trace</li></ul><p>A trace of execution of the current program. You can specify the duration in the seconds GET parameter. After you get the trace file, use the go tool trace command to investigate the trace</p><ul><li>block</li></ul><p>Stack traces that led to blocking on synchronization primitives</p><p>阻塞分析，记录 goroutine 阻塞等待同步（包括定时器通道）的位置</p><ul><li>cmdline</li></ul><p>The command line invocation of the current program</p><p>查看当前程序命令行</p><ul><li>goroutine</li></ul><p>Stack traces of all current goroutines</p><p>当前所有协程的堆栈跟踪</p><ul><li>mutex</li></ul><p>Stack traces of holders of contended mutexes</p><p>互斥锁分析，报告互斥锁的竞争情况</p><ul><li>threadcreate</li></ul><p>Stack traces that led to the creation of new OS threads</p><ul><li>allocs</li></ul><p>A sampling of all past memory allocations</p><p>内存分析，目标是对所有对象</p><ul><li>heap</li></ul><p>A sampling of memory allocations of live objects. You can specify the gc GET parameter to run GC before taking the heap sample.</p><p>内存分析，对活动的对象进行堆分配时记录堆栈跟踪，用于监视当前和历史内存使用情况，以及检查内存泄漏。</p><h3 id="go-tool-pprof"><a href="#go-tool-pprof" class="headerlink" title="go tool pprof"></a>go tool pprof</h3><p>使用<code>go tool pprof &lt;source&gt;</code>可以进行性能采集</p><ul><li><p>当<code>&lt;source&gt;</code>是url时，会从url进行采集保存为文件，并进入命令交互模式</p></li><li><p>当<code>&lt;source&gt;</code>是文件时，会自动进入命令交互模式</p></li><li><p>也可以添加 <code>-http</code>使用基于web的交互模式</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go tool pprof http://127.0.0.1:6060/debug/pprof/profile</span><br><span class="line">$ go tool pprof -http=:8080 http://127.0.0.1:6060/debug/pprof/profile</span><br></pre></td></tr></table></figure><h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><p>flat和flat%列代表该函数运行的时间/内存空间和占比</p><p>cum和cum%列代表该函数和子函数的运行时间/内存空间和占比</p><p>sum% 列代表当前行到第一行的flat%的总和</p><h4 id="命令交互模式"><a href="#命令交互模式" class="headerlink" title="命令交互模式"></a>命令交互模式</h4><blockquote><p> web - Visualize graph through web browser</p></blockquote><p>web命令会调用浏览器打开svg格式的可视化图像</p><h4 id="火焰图"><a href="#火焰图" class="headerlink" title="火焰图"></a>火焰图</h4><blockquote><p>火焰图就是看顶层的哪个函数占据的宽度最大。只要有”平顶”（plateaus），就表示该函数可能存在性能问题。</p></blockquote><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://github.com/golang/go/issues/22366" target="_blank" rel="noopener">wsl下pprof未能采集到性能数据</a></p><p><a href="https://github.com/uber/go-torch" target="_blank" rel="noopener">go 1.11自带火焰图go-torch项目已经废弃</a></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="https://github.com/hyper0x/go_command_tutorial/blob/master/0.12.md" target="_blank" rel="noopener">go tool pprof</a></p><p><a href="http://www.ruanyifeng.com/blog/2017/09/flame-graph.html" target="_blank" rel="noopener">如何读懂火焰图？</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;索引&quot;&gt;&lt;a href=&quot;#索引&quot; class=&quot;headerlink&quot; title=&quot;索引&quot;&gt;&lt;/a&gt;索引&lt;/h2&gt;&lt;h4 id=&quot;runtime-pprof&quot;&gt;&lt;a href=&quot;#runtime-pprof&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="pprof" scheme="https://blog.popstk.top/tags/pprof/"/>
+    
+      <category term="性能分析" scheme="https://blog.popstk.top/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang-select</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-select/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-select/</id>
+    <published>2019-02-26T06:15:37.000Z</published>
+    <updated>2019-12-15T06:19:47.455Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>golang-string-byte</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-string-byte/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-string-byte/</id>
+    <published>2019-02-26T06:15:22.000Z</published>
+    <updated>2019-12-15T06:19:47.457Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>golang-map-slice</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-map-slice/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-map-slice/</id>
+    <published>2019-02-26T06:14:51.000Z</published>
+    <updated>2019-12-15T06:19:47.453Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>golang-interface</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-interface/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-interface/</id>
+    <published>2019-02-26T06:14:39.000Z</published>
+    <updated>2019-12-15T06:19:47.451Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Golang channel详解</title>
+    <link href="https://blog.popstk.top/2019/02/26/golang-channel/"/>
+    <id>https://blog.popstk.top/2019/02/26/golang-channel/</id>
+    <published>2019-02-26T06:09:52.000Z</published>
+    <updated>2019-12-15T06:19:47.445Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>len(channel)</code>结果是？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;h2 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h2&gt;&lt;p&gt;&lt;co
+      
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="channel" scheme="https://blog.popstk.top/tags/channel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang defer详解</title>
+    <link href="https://blog.popstk.top/2019/02/25/go-defer/"/>
+    <id>https://blog.popstk.top/2019/02/25/go-defer/</id>
+    <published>2019-02-25T15:37:08.000Z</published>
+    <updated>2019-12-15T06:19:47.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>Golang defer详解，以及常见的一些使用组合的理解。</p><a id="more"></a><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote><p>A defer statement pushes a function call onto a list. The list of saved calls is executed after the surrounding function returns. Defer is commonly used to simplify functions that perform various clean-up actions.</p><p>The behavior of defer statements is straightforward and predictable. There are three simple rules:</p><ul><li>A deferred function’s arguments are evaluated when the defer statement is evaluated.</li><li>Deferred function calls are executed in Last In First Out order after the surrounding function returns.</li><li>Deferred functions may read and assign to the returning function’s named return values.</li></ul></blockquote><ul><li>defer的函数参数在defer声明就被求值确定</li><li>defer的函数调用顺序是先进后出</li><li>defer的函数可以读取或者赋值具名返回值</li></ul><h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><p>函数参数被立即求值的情况</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">1</span></span><br><span class="line">    <span class="keyword">defer</span> fmt.Println(<span class="string">"result =&gt;"</span>,<span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123; <span class="keyword">return</span> i * <span class="number">2</span> &#125;())</span><br><span class="line">    i++</span><br><span class="line">    <span class="comment">//prints: result =&gt; 2 (not ok if you expected 4)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>func() int { return i * 2 }()</code>作为参数会被立即求值得到2，然后和函数<code>fmt.Println</code>压入栈，因此输出是2</p><h4 id="加上闭包"><a href="#加上闭包" class="headerlink" title="加上闭包"></a>加上闭包</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> whatever [<span class="number">5</span>]<span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// part 1</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> whatever &#123;</span><br><span class="line"><span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123; fmt.Print(i) &#125;()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// part 2</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="keyword">range</span> whatever &#123;</span><br><span class="line"><span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">(n <span class="keyword">int</span>)</span></span> &#123; fmt.Print(n) &#125;(i)</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">$ <span class="number">4321044444</span></span><br></pre></td></tr></table></figure><p>由defer先进后出可知，part1输出其实是<code>44444</code>，part2是输出是<code>43210</code>。</p><p>part1循环里的函数是一个捕获了变量<code>i</code>的闭包，变量<code>i</code>在循环结束后值为4，这里因为闭包变量<code>i</code>也被延长了生命周期。因此最后调用时，所有的defer函数都引用了同一个<code>i</code>，所以结果是4.</p><p>part2就比较简单，由于<code>i</code>是defer函数参数，被立即求值并保存，因此结果是<code>43210</code>。</p><h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">"return:"</span>, deferCall1())    <span class="comment">// return:0</span></span><br><span class="line">    fmt.Println(<span class="string">"return:"</span>, deferCall2())    <span class="comment">// return:1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">deferCall1</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span></span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> i*<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">deferCall2</span><span class="params">()</span> <span class="params">(i <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> i*<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>由于deferCall1是匿名返回值，defer函数无法对返回值赋值，因此结果就是i*2 = 0</p><p>deferCall2的执行顺序是这样的：</p><ol><li>执行<code>return i*2</code>语句，相当于<code>i = i*2</code>此时返回值<code>i</code> = = 0</li><li>执行defer里的<code>i++</code>，现在<code>i</code>==1</li><li>最后返回<code>i</code>，即1</li></ol><p>defer函数和具名返回值的精确的执行顺序是这样的:</p><ul><li>return 求值完成，赋值给具名返回值变量</li><li>defer函数执行，defer可以读取修改具名返回值</li><li>函数返回具名返回值</li></ul><h4 id="如果defer的函数是变量？"><a href="#如果defer的函数是变量？" class="headerlink" title="如果defer的函数是变量？"></a>如果defer的函数是变量？</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">handlers := []<span class="function"><span class="keyword">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(<span class="string">"A"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(<span class="string">"B"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(<span class="string">"C"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _, h := <span class="keyword">range</span> handlers &#123;</span><br><span class="line"><span class="keyword">defer</span> h()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$ CBA</span><br></pre></td></tr></table></figure><p>函数本身也是会被立即求值，因为要保存到栈中。</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a href="https://blog.golang.org/defer-panic-and-recover" target="_blank" rel="noopener">Defer, Panic, and Recover</a></p><p><a href="http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/" target="_blank" rel="noopener">50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs</a></p><p><a href="https://stackoverflow.com/questions/16010694/how-golangs-defer-capture-closures-parameter" target="_blank" rel="noopener">How golang’s “defer” capture closure’s parameter?</a></p><p><a href="https://stackoverflow.com/questions/37248898/how-does-defer-and-named-return-value-work-in-golang" target="_blank" rel="noopener">How does defer and named return value work in golang?</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Golang defer详解，以及常见的一些使用组合的理解。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="defer" scheme="https://blog.popstk.top/tags/defer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Frequently Asked Questions - Changes from C</title>
+    <link href="https://blog.popstk.top/2019/02/24/golang-faq-changes-from-c/"/>
+    <id>https://blog.popstk.top/2019/02/24/golang-faq-changes-from-c/</id>
+    <published>2019-02-24T12:08:21.000Z</published>
+    <updated>2019-12-15T06:19:47.447Z</updated>
+    
+    <content type="html"><![CDATA[<p>golang官方的FAQ，包含了初学者常见的一些问题和解答。整理下翻译和自己的见解。</p><blockquote><p><a href="https://golang.org/doc/faq#change_from_c" target="_blank" rel="noopener">https://golang.org/doc/faq#change_from_c</a></p></blockquote><a id="more"></a><h2 id="Why-are-and-–-statements-and-not-expressions-And-why-postfix-not-prefix"><a href="#Why-are-and-–-statements-and-not-expressions-And-why-postfix-not-prefix" class="headerlink" title="Why are ++ and – statements and not expressions? And why postfix, not prefix?"></a>Why are ++ and – statements and not expressions? And why postfix, not prefix?</h2><blockquote><p>Without pointer arithmetic, the convenience value of pre- and postfix increment operators drops. By removing them from the expression hierarchy altogether, expression syntax is simplified and the messy issues around order of evaluation of ++ and – (consider f(i++) and p[i] = q[++i]) are eliminated as well. The simplification is significant. As for postfix vs. prefix, either would work fine but the postfix version is more traditional; insistence on prefix arose with the STL, a library for a language whose name contains, ironically, a postfix increment.</p></blockquote><p>由于没有指针运算，和简化表达式语法，<code>x++</code>等不再是表达式(expression)，而是语句（statement）</p><blockquote><ul><li>expression: 表达式 就是加减乘除等各种运算符号联接起来的式子a ? b : c 这是?和:组成的操作符号，自然也是表达式;</li><li>statement  语句：每种语言的语句就那么几种：for, while , if else, do..while , switch</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;golang官方的FAQ，包含了初学者常见的一些问题和解答。整理下翻译和自己的见解。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://golang.org/doc/faq#change_from_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://golang.org/doc/faq#change_from_c&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="FAQ" scheme="https://blog.popstk.top/tags/FAQ/"/>
+    
+      <category term="C" scheme="https://blog.popstk.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Frequently Asked Questions - Types</title>
+    <link href="https://blog.popstk.top/2019/02/24/golang-faq-types/"/>
+    <id>https://blog.popstk.top/2019/02/24/golang-faq-types/</id>
+    <published>2019-02-24T11:56:56.000Z</published>
+    <updated>2019-12-15T06:19:47.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>golang官方的FAQ，包含了初学者常见的一些问题和解答。整理下翻译和自己的见解。</p><blockquote><p> <a href="https://golang.org/doc/faq#types" target="_blank" rel="noopener">https://golang.org/doc/faq#types</a></p></blockquote><a id="more"></a><h2 id="Is-Go-an-object-oriented-language"><a href="#Is-Go-an-object-oriented-language" class="headerlink" title="Is Go an object-oriented language?"></a>Is Go an object-oriented language?</h2><blockquote><p>Yes and no. Although Go has types and methods and allows an object-oriented style of programming, there is no <strong>type hierarchy</strong>. The concept of “interface” in Go provides a different approach that we believe is easy to use and in some ways more general. There are also ways to embed types in other types to provide something analogous—but not identical—to <strong>subclassing</strong>. Moreover, methods in Go are more general than in C++ or Java: they can be defined for any sort of data, even built-in types such as plain, “unboxed” integers. They are not restricted to structs (classes).<br>Also, the lack of a type hierarchy makes “objects” in Go feel much more lightweight than in languages such as C++ or Java.</p></blockquote><p>既是也不是。尽管Go拥有类型和方法，也允许面向对象风格的编程，但它没有<strong>类型层级</strong>。 在Go中“接口”的概念提供了不同的方法，我们相信它易于使用且在某些方面更通用。 也有一些在其它类型中嵌入类型的方法，来提供类似（而非完全相同）的东西进行子类化。 此外，Go中的方法比C++或Java中的更通用：它们可被定义为任何种类的数据。 甚至是像普通的“未装箱”整数这样的内建类型。它们并不受结构（类）的限制。<br>此外，类型层级的缺失也使Go中的“对象”感觉起来比C++或Java的更轻量级。</p><h2 id="Why-is-there-no-type-inheritance"><a href="#Why-is-there-no-type-inheritance" class="headerlink" title="Why is there no type inheritance?"></a>Why is there no type inheritance?</h2><blockquote><p>Rather than requiring the programmer to declare ahead of time that two types are related, in Go a type automatically satisfies any interface that specifies a subset of its methods. Besides reducing the bookkeeping, this approach has real advantages. Types can satisfy many interfaces at once, without the complexities of traditional multiple inheritance. Interfaces can be very lightweight—an interface with one or even zero methods can express a useful concept. Interfaces can be added after the fact if a new idea comes along or for testing—without annotating the original types. Because there are no explicit relationships between types and interfaces, there is no type hierarchy to manage or discuss.</p></blockquote><p>type inheritance - 类型继承</p><p>像需要程序员提前声明两个类型的关联，在Go中类型会自动满足任何接口， 以此实现其方法的子集。除了减少记账式编程外，这种方法拥有真正的优势。 类型可立刻满足一些接口，而没有传统多重继承的复杂性。 接口可以非常轻量——带一个甚至零个方法的接口能够表达一个有用的概念。 若出现了新的想法，或为了测试目的，接口其实可以在以后添加——而无需注释掉原来的类型。 由于在类型和接口之间没有明确的关系，也就无需管理或讨论类型层级。</p><blockquote><p>It takes some getting used to but this implicit style of type dependency is one of the most productive things about Go.</p></blockquote><p>它需要一段时间来适应，但这种隐式的类型依赖是Go中最具生产力的东西之一。</p><h2 id="Why-doesn’t-type-T-satisfy-the-Equal-interface"><a href="#Why-doesn’t-type-T-satisfy-the-Equal-interface" class="headerlink" title="Why doesn’t type T satisfy the Equal interface?"></a>Why doesn’t type T satisfy the Equal interface?</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Equaler <span class="keyword">interface</span> &#123;</span><br><span class="line">    Equal(Equaler) <span class="keyword">bool</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> T <span class="keyword">int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T)</span> <span class="title">Equal</span><span class="params">(u T)</span> <span class="title">bool</span></span> &#123; <span class="keyword">return</span> t == u &#125; <span class="comment">// does not satisfy Equaler</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> T2 <span class="keyword">int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T2)</span> <span class="title">Equal</span><span class="params">(u Equaler)</span> <span class="title">bool</span></span> &#123; <span class="keyword">return</span> t == u.(T2) &#125;  <span class="comment">// satisfies Equaler</span></span><br><span class="line"></span><br><span class="line">​<span class="string">`</span></span><br></pre></td></tr></table></figure><p>在Go中，类型系统并不提升 Equal 的实参，那是程序员的责任</p><p>​<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Opener <span class="keyword">interface</span> &#123;</span><br><span class="line">   Open() Reader</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T3)</span> <span class="title">Open</span><span class="params">()</span> *<span class="title">os</span>.<span class="title">File</span>  // <span class="title">does</span> <span class="title">not</span> <span class="title">satisfy</span> <span class="title">Opener</span></span></span><br></pre></td></tr></table></figure></p><p>在Go中，T3 并不满足 Opener，尽管它在另一种语言中可能满足。<br>Go的类型系统确实为程序员做的更少， 子类型化的缺乏使关于接口满足的规则非常容易制订： 函数的名字和签名完全就是那些接口吗？Go的规则也容易高效地实现。</p><p>即接口满足的规则: 函数的名字和签名完全就是那些接口</p><h2 id="Can-I-convert-T1-to-T2-if-T1-and-T2-have-the-same-underlying-type"><a href="#Can-I-convert-T1-to-T2-if-T1-and-T2-have-the-same-underlying-type" class="headerlink" title="Can I convert []T1 to []T2 if T1 and T2 have the same underlying type?"></a>Can I convert []T1 to []T2 if T1 and T2 have the same underlying type?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type T1 int</span><br><span class="line">type T2 int</span><br><span class="line">var t1 T1</span><br><span class="line">var x = T2(t1) // OK</span><br><span class="line">var st1 []T1</span><br><span class="line">var sx = ([]T2)(st1) // NOT OK</span><br></pre></td></tr></table></figure><blockquote><p>In Go, types are closely tied to methods, in that every named type has a (possibly empty) method set. The general rule is that you can change the name of the type being converted (and thus possibly change its method set) but you can’t change the name (and method set) of elements of a composite type. Go requires you to be explicit about type conversions.</p></blockquote><p>在go语言中，类型跟方法紧密相连，因为每种具名类型都有一个（可能是空的）方法集。一条通用的规则：你可以转换类型（因此改变了方法集），但无法转换在混合类型里的元素。go要求显式的转换。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;golang官方的FAQ，包含了初学者常见的一些问题和解答。整理下翻译和自己的见解。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; &lt;a href=&quot;https://golang.org/doc/faq#types&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://golang.org/doc/faq#types&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="FAQ" scheme="https://blog.popstk.top/tags/FAQ/"/>
+    
+      <category term="Types" scheme="https://blog.popstk.top/tags/Types/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode Go开发</title>
+    <link href="https://blog.popstk.top/2019/02/22/vscode-go/"/>
+    <id>https://blog.popstk.top/2019/02/22/vscode-go/</id>
+    <published>2019-02-22T02:21:25.000Z</published>
+    <updated>2019-12-15T06:19:47.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>vscode go开发环境记要</p><a id="more"></a><h2 id="代码补全、跳转"><a href="#代码补全、跳转" class="headerlink" title="代码补全、跳转"></a>代码补全、跳转</h2><p>用了 gomod后非常慢，这是由于还有很多工具还不支持 gomod , 见<a href="https://github.com/golang/go/issues/24661" target="_blank" rel="noopener">issue</a> </p><p>可以先改用<a href="https://github.com/saibing/bingo" target="_blank" rel="noopener">bingo</a>， 它是个支持<a href="https://github.com/Microsoft/language-server-protocol" target="_blank" rel="noopener">Language Server Protocol</a>的Go language server</p><h4 id="编译安装bingo"><a href="#编译安装bingo" class="headerlink" title="编译安装bingo"></a>编译安装bingo</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/saibing/bingo.git</span><br><span class="line">cd bingo</span><br><span class="line">GO111MODULE=on go install</span><br></pre></td></tr></table></figure><h4 id="配置vscode"><a href="#配置vscode" class="headerlink" title="配置vscode"></a>配置vscode</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"go.useLanguageServer"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"go.alternateTools"</span>: &#123;</span><br><span class="line">        <span class="attr">"go-langserver"</span>: <span class="string">"bingo"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"go.languageServerFlags"</span>: [</span><br><span class="line">        <span class="string">"-enhance-signature-help"</span>,</span><br><span class="line">        <span class="string">"-trace"</span>,</span><br><span class="line">        <span class="string">"-format-style=goimports"</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"go.languageServerExperimentalFeatures"</span>: &#123;</span><br><span class="line">        <span class="attr">"format"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">"autoComplete"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="重启vscode"><a href="#重启vscode" class="headerlink" title="重启vscode"></a>重启vscode</h4><p>可见后台进程<code>bingo</code>，当收到<code>vscode</code>消息，说明已经加载完成</p><p><img src="/passages/vscode-go/1550803179230.png" alt="1550803179230"></p><ul><li><p>代码补全快了不少，但只是勉强能用</p></li><li><p>定义跳转，引用查找非常快</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vscode go开发环境记要&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="https://blog.popstk.top/tags/go/"/>
+    
+      <category term="vscode" scheme="https://blog.popstk.top/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【科普工具文】请对照这二十四条逻辑谬误自行打脸</title>
+    <link href="https://blog.popstk.top/2019/02/17/yourlogicalfallacyis/"/>
+    <id>https://blog.popstk.top/2019/02/17/yourlogicalfallacyis/</id>
+    <published>2019-02-17T09:58:11.000Z</published>
+    <updated>2019-12-15T06:19:47.469Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文的使用方法<br>本文一共列出了二十四种常见的逻辑谬误。你可以保存本文的地址，当你在和别人的交谈中发现对方出现了本文所涉及的逻辑谬误，但是又懒得亲自向对方解释他的谬误的时候，你就给你给出本文的链接和谬误序号。</p><p>使用示例：<br>你犯了《请对照这二十四条逻辑谬误自行打脸》一文中第十七条“没有真正的苏格兰人”谬误，请自行打脸。</p><p>原文：<a href="http://blog.renren.com/blog/228537234/866912499" target="_blank" rel="noopener">http://blog.renren.com/blog/228537234/866912499</a></p><a id="more"></a><h2 id="第一条：稻草人"><a href="#第一条：稻草人" class="headerlink" title="第一条：稻草人"></a>第一条：稻草人</h2><p>你歪曲了别人的观点，使你自己能够更加轻松的攻击别人。<br>你夸张、歪曲，甚至凭空创造了别人的观点，来让你本身的观点显得更加合理。这是一种极端不诚实的行为，这不但影响了理性的讨论，也影响了你自己观点的可信度。因为如果你可以负面的歪曲别人的观点，你就有可能从正面歪曲自己的观点。<br>例子：小明说国家应该投入更多的预算来发展教育行业，小红回复到：“想不到你这么不爱国，居然想减少国防开支，让外国列强有机可乘。” 小红就犯了稻草人谬误。</p><h2 id="第二条：错误归因"><a href="#第二条：错误归因" class="headerlink" title="第二条：错误归因"></a>第二条：错误归因</h2><p>你从两个事物可能存在相关性，就得出一个事物是造成另一个事物的原因。<br>你看到了两个事物同时存在，就觉得其中一个事物是另一个的起因。你的错误在于，同时存在的两个事物未必有因果关系，可能这两个事物有共同的起因，或者两个事物根本没有因果关系，它们直接的共存只是巧合。一个事情比另一个事情先发生同样不能说明两个事物肯定存在因果性。<br>例子：小红指出，过去几个世纪全球海盗数量减少，全球温度在升高，从而得出是海盗的数量的减少造成了气候变化，海盗能够降低全球温度。小红犯了错误归因的谬误。</p><h2 id="第三条：诉诸感情"><a href="#第三条：诉诸感情" class="headerlink" title="第三条：诉诸感情"></a>第三条：诉诸感情</h2><p>你试图通过操作别人的感情来取代一个有力的论述。<br>你操作的感情可能包括恐惧、嫉妒、怜悯、骄傲等等。一个逻辑严谨的论述可能激起别人的情感波动，但是如果只用感情操作而不用逻辑论述，那你就犯了诉诸感情的错误。每个心智健康的人都会受感情影响，所以这种谬误很有效，但这也是为什么这种谬误是低级和不诚实的手段。<br>例子：小红在饭店看到小明吃狗肉，于是上前训斥：“你怎么可以吃狗肉，小狗多么可爱，就像小朋友一样，你忍心伤害小朋友吗？” 小红犯了诉诸感情的谬误。</p><h2 id="第四条：谬误谬误"><a href="#第四条：谬误谬误" class="headerlink" title="第四条：谬误谬误"></a>第四条：谬误谬误</h2><p>你看到别人的论述水平很低，或者别人的论述里面有谬误，就认为别人的观点一定是错误的。<br>很多时候，辩论的赢家获胜并不是因为观点正确，而是因为辩论技巧更好。作为一个理性的人，你不能因为别人的论述中存在谬误或者错误，就认为别人的观点一定是错误的。<br>例子：一个提倡健康饮食的人在电视上发表了很荒唐的饮食理论来推广健康饮食理念，小红看后觉得健康饮食就是骗人的，于是开始每天暴饮暴食。小红犯了谬误谬误。</p><h2 id="第五条：滑坡谬误"><a href="#第五条：滑坡谬误" class="headerlink" title="第五条：滑坡谬误"></a>第五条：滑坡谬误</h2><p>你搞得好像如果A发生了，那么Z也一定会发生会，以此来表示A不应该发生。<br>你不讨论现下的事物(A)，而是把讨论重心转移到了意淫出来的极端事物(Z)。因为你没能给出任何证据来证明A的发生一定会造成极端事物Z的发生，所以这是一种诉诸恐惧的谬误，也影响了人们讨论A时候的客观性。<br>例子：小红反对同性恋婚姻，因为她认为如果我们允许同性恋结婚，那么就会有人想要和桌子、椅子结婚。小红犯了滑坡谬论。</p><h2 id="第六条：人身攻击"><a href="#第六条：人身攻击" class="headerlink" title="第六条：人身攻击"></a>第六条：人身攻击</h2><p>你讨论时针对对方的人格、动机、态度、地位、阶级或处境等，而进行攻击或评论，并以此当作提出了理据去驳斥对方的论证或去支持自己的论点<br>人身攻击时不一定是直接进行攻击，也可能是通过背后捅刀子、暗示听众等等方式来造成对对方人格的质疑。你试图用你对别人人格的攻击来取代一个有力的论述。更多关于人身攻击。<br>例子：当小明提出了一个很合理的关于基础设施建设的提议的时候吗，小红说她不相信任何小明说的话，因为小明不爱国，经常批评政府，不懂得感恩。小红犯了人身攻击的谬误。</p><h2 id="第七条：诉诸虚伪"><a href="#第七条：诉诸虚伪" class="headerlink" title="第七条：诉诸虚伪"></a>第七条：诉诸虚伪</h2><p>你不正面回应别人对你的批评，而是用批评别人作为你的回复——“你不也曾经…..”<br>你想要把通过用批评回应批评的方式，免去你为自己辩护的责任。你通过这种方法来暗示对方是个虚伪的人，但是不管别人虚伪与否，你都只是在回避别人对你的批评。<br>例子：小明在和小红争论的时候指出小红犯了一个逻辑谬误，小红不正面捍卫自己，反而回应：“你之前也犯了逻辑谬误。” 小红在这里犯了诉诸虚伪的谬误</p><h2 id="第八条：个人怀疑"><a href="#第八条：个人怀疑" class="headerlink" title="第八条：个人怀疑"></a>第八条：个人怀疑</h2><p>你因为自己不明白或者知识水平不够，就得出一个事物可能是假的。<br>一些很复杂的概念，比如生物进化等等需要一些基本的理解和知识。有些人因为不理解这些复杂的概念，而觉得这些东西是错误的。<br>例子：小红指着块石头说：“你说进化论是真的，那你让这块石头进化人给我看看。”小红犯了个人怀疑的谬误。</p><h2 id="第九条：片面谬误"><a href="#第九条：片面谬误" class="headerlink" title="第九条：片面谬误"></a>第九条：片面谬误</h2><p>当你的观点被证明是错误的时候，你用特例来给自己开脱。<br>人类都不喜欢被证明是错的，所以当他们被证明是错的时候总会想办法给自己开脱。人总是觉得自己以前觉得正确的东西必须是正确的吗，所以总能找到理由让自己阿Q一下。只有诚实和勇敢的人才能面对自己的错误，并且承认自己犯错了。<br>例子：小红说自己有特异功能，能用塔罗牌算出未出生小孩的性别，但是孩子生下来后发现猜错了，于是她就说是算命的人缺乏信仰。小红犯了片面谬误。</p><h2 id="第十条：诱导性问题"><a href="#第十条：诱导性问题" class="headerlink" title="第十条：诱导性问题"></a>第十条：诱导性问题</h2><p>你在提出问题的时候加入了诱导的成分，使得对方只能按着你的意思来回答。<br>你试图用诱导性的问题来逼对方回答你提出的低级问题，从而破坏理性的讨论。<br>例子：小红怀疑自己的丈夫孙越搞外遇，为了一探究竟，于是就问他：“陈轩的屁股上是不是有个胎记？”小红使用的就是诱导性问题。</p><h2 id="第十一条：举证责任"><a href="#第十一条：举证责任" class="headerlink" title="第十一条：举证责任"></a>第十一条：举证责任</h2><p>你认为举证责任不在提出观点的人，而在于质疑观点的人。<br>当有人提出一个观点结果被人质疑后，你认为举证的责任不在提出观点的人，而在质疑者。不能证伪一个事物，或者举出反例，并不能证明这个事物的合理性。当然，如果只因为没有足够的证据说明一个事物是合理的并不能肯定的说明它是不合理的。<br>例子：小红说他相信宇宙是一个叫KengDie的全知全能神创造的，因为没有人能证明KengDie不存在，所以KengDie是存在的。小红犯了举证责任的谬误。</p><h2 id="第十二条：语义模糊"><a href="#第十二条：语义模糊" class="headerlink" title="第十二条：语义模糊"></a>第十二条：语义模糊</h2><p>你用双关语或者意思存有歧义的语言来歪曲事实。<br>你使用双关语或者意思存有歧义的语言，当你被别人批评的时候又利用这些有歧义的语言作为自己的挡箭牌。<br>例子：地上一个猴，树上qi个猴，一共几个猴？</p><h2 id="第十三条：赌徒谬误"><a href="#第十三条：赌徒谬误" class="headerlink" title="第十三条：赌徒谬误"></a>第十三条：赌徒谬误</h2><p>你认为随机事物的发生和之前发生的事情是有相关性的。<br>有人在看到独立的随机事件（比如抛硬币）时，总觉得会和前面的事情有相关性（前面连着五个正面，下一个肯定要是反面了。）</p><h2 id="第十四条：乐队花车"><a href="#第十四条：乐队花车" class="headerlink" title="第十四条：乐队花车"></a>第十四条：乐队花车</h2><p>你试图说明因为很多人都在做同一件事情/相信同一件事物，这件事情就是对的。<br>一个事物/观点的流行程度和它本身是否合理没有关系。地球是球形的，在人们相信地球是平的时代地球也是球形的，地球才不管你信不信它呢。<br>例子：看到《货币战争》怎么那么畅销，小红相信一定是罗斯柴尔德和共济会在背后操纵着整个世界。小红犯了乐队花车谬误。</p><h2 id="第十五条：诉诸权威"><a href="#第十五条：诉诸权威" class="headerlink" title="第十五条：诉诸权威"></a>第十五条：诉诸权威</h2><p>你利用一个权威人物/机构的观点来取代一个有力的论述。<br>要证明一个观点，只是摘录别人的观点是不够的， 至少要知道所提到的权威为什么有那样的观点。因为权威人物/机构也是会犯错误的，所以不能无条件的假设合理性。当然，权威人物/机构的观点有可能是对的，所以不能只因为对方使用了诉诸权威的谬误就认定这个观点肯定是错的。<br>例子：小红不知道怎么反驳进化论，于是就说：“我老公孙越是大科学家，他觉得进化论是错的。”小红犯了诉诸权威的额谬误。</p><h2 id="第十六条：合成谬误"><a href="#第十六条：合成谬误" class="headerlink" title="第十六条：合成谬误"></a>第十六条：合成谬误</h2><p>你认为一个总体的组成部分所具有的特性，对于这个总体的其它部分也是普适的。<br>很多时候，对于一个组成部分存在合理性的事物，对于其它组成部分并不具有合理性。我们常能观察到事物之间的一致性，所以当一致性不存在的时候也会偏见的认为有一致性。<br>例子：小红买了辆自行车，当她看到自行车的车座是人造革的时候，她就觉得自行车的其它部位也是人造革的。</p><h2 id="第十七条：没有真正的苏格兰人"><a href="#第十七条：没有真正的苏格兰人" class="headerlink" title="第十七条：没有真正的苏格兰人"></a>第十七条：没有真正的苏格兰人</h2><p>你提出了一个观点，并收到了别人的批评，你试图用“诉诸纯洁”的方式来捍卫自己的观点。<br>你试图通过马后炮和修改标准的方式来维护自己那有缺陷的观点。<br>例子：<br>小红：“所有荷兰人都喜欢喝胡辣汤”。<br>小明：“孙越就是荷兰人，他就不喜欢喝胡辣汤。”<br>小红：“好吧，所有【真正的】荷兰人都喜欢喝胡辣汤。”&lt;——小红这里就犯了“没有真正的苏格兰人”的谬误</p><h2 id="第十八条：基因谬误"><a href="#第十八条：基因谬误" class="headerlink" title="第十八条：基因谬误"></a>第十八条：基因谬误</h2><p>你通过一个事物的出身来判断它的好坏。<br>你试图逃避正面的讨论，而转而讨论事物的出处。这种做法和本文第六条“人身攻击”类似，都是想试图通过已有的负面印象来从侧面攻击对方，却不能正面的回应对方的论述。<br>例子：<br>小明：“孙越不喜欢喝胡辣汤。”<br>小红：“孙越是荷兰人，怎么会不喜欢喝胡辣汤？”&lt;——小红这里就犯了基因谬误</p><h2 id="第十九条：非黑即白"><a href="#第十九条：非黑即白" class="headerlink" title="第十九条：非黑即白"></a>第十九条：非黑即白</h2><p>你把黑和白作为仅有的可能，却忽略了其它可能性的存在。<br>你使用了简单粗暴的假二分法，来掩盖其它可能性的存在。你想通过非黑即白的选择来误导讨论，破坏辩论的建设性。<br>例子：在谈到反恐战争时，总统说如果你不支持反恐战争，你就是支持恐怖分子。总统这里犯了非黑即白的谬误。</p><h2 id="第二十条：窃取论点"><a href="#第二十条：窃取论点" class="headerlink" title="第二十条：窃取论点"></a>第二十条：窃取论点</h2><p>你采用循环论证的方法来证明一个被包含在前提里面的观点。<br>这是一种逻辑智商破产的谬误，因为你把你的前提假设默认为真的，然后利用循环论证的方式来证明它。<br>例子：KengDie教的经文《KengDie Sutra》里面说的东西都是真理，因为在《KengDie Sutra》第一章第二段里面提到了“KengDie所述都是真理。”</p><h2 id="第二十一条：诉诸自然"><a href="#第二十一条：诉诸自然" class="headerlink" title="第二十一条：诉诸自然"></a>第二十一条：诉诸自然</h2><p>你认为一个事物是“自然”的，所以它是合理、必然并且更好的。<br>一个事物是自然的并不一定代表它就更好。互相杀戮是大自然中普遍存在的现象，但是大多数人都认为我们不应该互相屠杀。<br>例子：小红认为吃草药肯定比吃人工制造的药有效，因为草药更加“自然”。小红犯了诉诸自然的谬误</p><h2 id="第二十二条：轶事证据"><a href="#第二十二条：轶事证据" class="headerlink" title="第二十二条：轶事证据"></a>第二十二条：轶事证据</h2><p>你试图用个人经验或者单独事例来取代逻辑论述或者有力的证据。<br>比起复杂而确凿的证据来说，轶事证据更容易获得，但是却要粗浅很多。在绝大多数情况下，量化衡量的科学数据/确凿证据比个人经验/轶事要更加可信。<br>例子：小红爷爷是个30年的老烟枪，现在80多岁身体还很健康，小红依次得出吸烟对身体无害的结论。小红犯了轶事证据的谬误。</p><h2 id="第二十三条：德克萨斯神枪手"><a href="#第二十三条：德克萨斯神枪手" class="headerlink" title="第二十三条：德克萨斯神枪手"></a>第二十三条：德克萨斯神枪手</h2><p>你在大量的数据/证据中小心的挑选出对自己的观点有利的证据，而不使用那些对自己不利的数据/证据。<br>你先开了一枪，然后在子弹击中的地方画上靶心，搞得自己真是个神枪手一样。你先决定了自己的立场，然后才开始找证据，并且你只找对自己有利的，而对于那些对自己不利的就选择性忽略。<br>例子：红X字会为了证明自己尽到了职责，到处宣传自己拨出了XXXX的善款，却只字不提自己公款消费的奢侈无度。红X字会犯了“德克萨斯神枪手”谬误</p><h2 id="第二十四条：中间立场"><a href="#第二十四条：中间立场" class="headerlink" title="第二十四条：中间立场"></a>第二十四条：中间立场</h2><p>你觉得两个极端观点的妥协，或者说中间立场，肯定是对的。<br>虽然大多数时候，真理确实存在于两种极端的中间地带，但是你不能轻易的认为只要是处于中间立场的观点就一定是正确的。谎言和实话的中间地带依然是谎言。<br>例子：小红认为疫苗会造成儿童自闭症，孙越从科学研究的结论中得出结论认为疫苗不会造成儿童自闭症，小明认为两者观点的妥协——疫苗会造成儿童自闭症，但不是全部的儿童自闭症——才是正确的。小明犯了中间立场的谬误。</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文的使用方法&lt;br&gt;本文一共列出了二十四种常见的逻辑谬误。你可以保存本文的地址，当你在和别人的交谈中发现对方出现了本文所涉及的逻辑谬误，但是又懒得亲自向对方解释他的谬误的时候，你就给你给出本文的链接和谬误序号。&lt;/p&gt;
+&lt;p&gt;使用示例：&lt;br&gt;你犯了《请对照这二十四条逻辑谬误自行打脸》一文中第十七条“没有真正的苏格兰人”谬误，请自行打脸。&lt;/p&gt;
+&lt;p&gt;原文：&lt;a href=&quot;http://blog.renren.com/blog/228537234/866912499&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://blog.renren.com/blog/228537234/866912499&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="短文" scheme="https://blog.popstk.top/tags/%E7%9F%AD%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>伸手的大爷们</title>
+    <link href="https://blog.popstk.top/2019/02/14/shenshoudedayemeng/"/>
+    <id>https://blog.popstk.top/2019/02/14/shenshoudedayemeng/</id>
+    <published>2019-02-14T09:31:40.000Z</published>
+    <updated>2019-12-15T06:19:47.461Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>“我想让这世界越来越好，可是完全不知道怎么去做。”</p></blockquote><a id="more"></a><h2 id="哗众取宠的结局"><a href="#哗众取宠的结局" class="headerlink" title="哗众取宠的结局"></a>哗众取宠的结局</h2><p>​    如果仔细说起PSP为什么会在中国流行，大概可以列出不下一千种理由。可千言万语说到归齐，没有破解的PSP肯定无法成为影音游戏通吃的装X利器，也不会在街头巷尾地铁公交里成为装机量第一的掌上设备。稍微对PSP熟悉一点的人可能都知道，PSP在2000型之前的时代有着各种美好，所有的自制软件和破解都畅通无阻。后来SONY的CEO来了一趟中国，看到比日本专卖店规模还大的水货电玩批发之后就回去痛下决心，彻底整改PSP的主板构架，愣是把这机器的破解漏洞给堵上了。导致PSP3000型苦等半年多才等到一个软件漏洞破解。随后就是硬件厂商和破解黑客们之间的战斗，你升级固件，我升级自制软件，你来我往不亦乐乎。</p><blockquote><p><strong>大家都不爱装孙子，所以也就都别装大爷，OK？</strong></p></blockquote><p>​    让时间回拨到一年前，2010年1月最后两天，SQUARE ENIX的PSP大作《王国之心 梦中诞生》发售，这个使用了新升级文件的游戏让所有拿着PSP等破解的玩家傻了眼。游戏的特殊构造让目前的自制系统无法运行ISO文件。此时最早开发破解固件M33的大神Dark Alex早已退隐，百分之九十九的玩家都在使用GEN小组的自制系统。所有人都希望能有人出现破解掉这个游戏，让自己能玩到最新最快的PSP新作。</p><p>​        实现这个愿望的并不是国外黑客，而是一名国内的自制软件制作者。在这之前我们用盗版的时候虽然总不忘自夸一句我国人民勤劳勇敢什么的，但其实心里都明白，大部分破解高手集中在德国和俄罗斯，历代游戏主机的破解都跟国人没有半毛钱关系。只是我们宁愿相信群众的力量无穷大，相信茫茫人海中总会有人站出来解决这个问题——反正肯定不是摇旗呐喊的自己就行。</p><p>​    这个人的ID已经不用复述，在高调开贴声称自己要破解《王国之心 梦中诞生》后，他的帖子点击率和回复都达到了一个前所未有的高度。有的人认为他是哗众取宠，有的人从PSP游戏文件构成分析这件事儿的难度，也有人更直接地冷嘲热讽……然后在大约一周后，他放出了在游戏中开启金手指软件的截图，游戏破解成功。</p><p>​        十天后，他放出了破解傻瓜包。</p><p>​        几周后，他放出了可以直接玩更高版本系统下游戏的自制固件。</p><p>​        于是所有的质疑和讽刺都化作此起彼伏的赞扬，他的帖子被标红，他的破解让外国玩家也不远万里过来注册，他的名声传遍了世界，他的ID被尊称为大神，就像曾经带给PSP破解最佳思路的Dadk Alex一样。</p><p>​        只是很少有人能记得，DA在没有开发M33后续固件后，论坛上那些质疑和嘲讽的声音，甚至有人跑到DA的国外官方论坛上叫骂。那些帖子和言论随着时间沉入系统深处，却没能沉淀出伸手党们平静的心态。</p><p>​        历史总是惊人地相似，这位曾经被称为国人骄傲的“大神”，在成功开发出两代自制固件，破解掉许多新游戏之后，也遭遇了相似的一幕。</p><p>​        是个玩PSP的都知道《怪物猎人3P》要在2010年的12月1日发售，既是为了纪念《怪物猎人》系列周年庆，也是为了让软件商的年度财报好看一些。对于这款在中国和日本都有着极高人气的游戏，每个粉丝都热切期盼着。</p><p>​        在《怪物猎人3P》发售前一周，“大神”发帖表示破解毫无压力。目前自制固件无法运行该游戏，但他可以通过一些改进搞定一切。</p><p>​        接下来的精彩，超过的最初所有人的想象。</p><p>​    “大神”有一个习惯，必须等到游戏发售一周后公布销量才发布破解。《怪物猎人3P》偷跑数日，各大论坛上憋着等下载的人数概超过了六位，帖子里各种惨嚎和胡言乱语不计其数。不负众望的“大神”用数小时即完成了《怪物猎人P3》的破解，随后宣布可以先给各大汉化组，以便汉化组能够尽快让大家玩到汉化游戏。</p><p>​        事实证明，这个世界上最美好的只有愿望。当时得知“大神”已经破解了《怪物猎人3P》的伸手党们本已躁动不安，有人说这搞破解的在装X，有人说他是为了赚取眼球和点击率，当然还有更难听的，总之人性的各种精彩就在这一刻被表现得淋漓尽致。在变了味的网络喧嚣中，这个故事忽然急转直下。</p><p>​        “大神”私下给出的破解补丁被自己熟悉的一位论坛版主泄露出去了，于是大部分支持的声音瞬间变成了声讨——凭什么你能给他却不给我们玩？更有甚者，人肉出了“大神”的个人信息要发布出去。威胁到了现实生活的“大神”惟有选择退出PSP破解界，从此消失在众人的视线中。</p><p>​        在离开网络之前，他发布了还在完善中的新自制固件，并留下了无奈的留言——“看在我让你们玩了这么多新游戏的份上，让我安静的离开吧。”</p><p>​        当国外PSP破解黑客得知这位东方同行退出之后，几乎在第一时间发表了遗憾的声明，甚至他们也承认这同道中人才是“有史以来最好的PSP破解黑客”。但这一切已无法挽回，《怪物猎人3P》破解了，而付出这样代价是任何人都始料未及的。</p><p>​        淘宝商人继续卖UMD，该玩盗版的继续玩盗版，BBS上的管理员在打扫过论坛之后，关于这件事前前后后的就算是结束了，一切都如未曾发生。可谁也不知道下一个破解PSP新游戏的人在哪里，谁也不知道下一次又有谁要遭受网络冷暴力。一个一个汉化组成立又解散，一次又一次的攻讦和辱骂。有时候那些继续坚持互联网共享精神的人们也忍不住要问一句。</p><p>​        大爷们，你们到底想怎样？</p><h2 id="从来就没温暖过"><a href="#从来就没温暖过" class="headerlink" title="从来就没温暖过"></a>从来就没温暖过</h2><p>​    我国玩家的尴尬早已不是一天两天的事了，这样一个不允许电子游戏机成为进口商品的国家里想要玩游戏需要付出很多曲折的代价。面对没有官方中文版和游戏首发必然不会到货的环境，网络共享发布和汉化一直是游戏圈最受关注的两个群体。而我们通常会把那些下载免费游戏的人称为伸手党——这没什么侮辱的意思，就和字面上的意思一样，大多数玩家付出的无非就是下载的时间和点几下鼠标而已，他们可能未曾想过别人付出什么样的艰辛。<br>​        最容易受到诟病的当然还是汉化组，游戏的汉化组和影视作品字幕组还不太一样。一般来说一个游戏的汉化过程都漫长又痛苦，除非特别有爱也没什么人会去做这件事。遗憾的是就算这么单纯的工作，一样有人不断表现出各种大爷丰采。</p><p>​        “《XXX》的汉化怎么还没开始？汉化组的人都吃屎去了吗？”<br>​        “你们说要汉化《XXXX》都已经快四个月了，怎么还没有截图放出！”<br>​        “垃圾，这汉化也太垃圾了！”<br>​        “为什么没有人汉化《XX》，赶快来人开坑啊！”</p><p>​    这也是为什么许多汉化组面对外人询问工作进度时态度不怎么好的主要原因——大家只是在网络上做白工而已，忽然凭空多出这么多视察工作的领导，谁的心情也不会太好。而且大多数不顾别人感受胡言乱语的人反倒不会认真去体验别人的汉化作品，他们这么做通常只是因为网络上问句话没有成本而已，就像他们下载那些别人放出的游戏和汉化补丁那样。在这间或里即使有许多真挚的感谢，也被淹没在各种责问之中了。很多人可能一辈子都没怎么被人尊重过，因此也不懂得怎样尊重别人。</p><p>​        这样的无理取闹导致大多数汉化组行事低调，哪怕发布新版本汉化补丁也战战兢兢，生怕惹恼了大爷们招来不知道多少叫骂和喷贴。不管是错字、延期还是有了死机BUG，总免不了要被人喷上一番。以至于后来许多搞汉化的都是做一票就走，搞完项目就宣布解散，免得被人整个团队一起喷。</p><p>​        有的人说反正汉化组那么多，喷跑几个心理素质差的，还会有人继续干这个活儿。可这帮人不知道破解领域就那么几个能人，有人跑去DA的论坛喷他，有人在GEN小组的留言板上刷屏，也有人各种喷国内破解的大神……这些人绝大多数是因为被他们喷的人才玩到的新游戏，他们很容易就忘记了这一点，正如他们希望别人善待自己，但自己完全不懂如何善待别人。</p><h2 id="我们的社会怎么了"><a href="#我们的社会怎么了" class="headerlink" title="我们的社会怎么了"></a>我们的社会怎么了</h2><p>​    常听人说起说一个道理：那就是你对某个人好，就得一直好下去，只要有一次不够好，以前所做的各种努力可能都会付之东流。说这话的人肯定对人性有相当程度的了解，他也一定经历过什么惨痛的教训。</p><p>​        在很多时候，做破解也好，做软件共享也好，或者搞汉化也好，都面临这样一种窘境。你做得好就是几声赞扬，你做不好了马上质疑谩骂狼烟四起。这就好比许多软件常年免费，忽然有一天收钱了，我们愤怒又失望地骂了一万句，这才记起来，按照这个世界的规矩其实本来就该收钱。只是我们享受了太多优待，把这优待当成了常态。</p><p>​        其实没有什么事是真正应该的。比如几年前有个台湾人宣布独立汉化《皇家骑士团2》的SFC版，但不外流。唯一要求就是申请汉化补丁的人答应不要外泄，同时附上自己手中正版《皇家骑士团2》卡带的照片三张。这要求其实不算过分，也比较符合台湾玩家尊重正版的习惯。遗憾的是国内大部分玩家并没有SFC的卡带，移植版的PS和SS的正版光盘更不用说了。</p><p>​        于是觉得无望拿到补丁的玩家纷纷登陆那个人所在的论坛，各种破口大骂，极尽诋毁之能事。当然骂完人家照例是不给补丁的，只是那些留言让彼岸的玩家又低看了内地玩家一次。</p><p>​        大概所有人都能记得那些汉化、字幕还和共享软件上都会标明是以研究和学习为目的，并不是用于商业用途，请于24小时内删除等等。这些字眼本身就已经是阐述互联网共享的基本态度，一切都应该以发布者的决定为主，因为我们只是些伸手党。可偏偏有人就是想当发布者的主人，冀望于骂几句之后改变别人的意见。没错他们是改变了，他们让更多的人学会了珍惜生命，远离破解和汉化。</p><p>​    其实这种事远远不止发生在游戏圈，笔者一个朋友家境不错，为人又古道热心，开了一家桌游店。经常有人电脑坏了打电话问他该怎么办，他说如果是小问题你就直接拿来修吧。那边的人就问要多少钱，他说一般情况下不会收钱。然后电话那边的人往往沉吟片刻，说好吧我再想想就挂了电话。这位朋友就不太明白，免费修电脑什么的为什么会让人那么犹豫。后来经旁人之口才知道，原来很多人已经不相信有素不相识的人可以免费帮别人忙这种事发生了，在他们看来这个社会上的每一次举手之劳都要明码标价，否则就有更深的阴谋。</p><p>​        我想这也是很多人面对破解、汉化和游戏共享发布等情况时的内心真实写照。对于社会大环境的怀疑，对于他人目的的揣测和出于自身的不成熟造就了众多的网络喷子，在一个不必担心责任问题的地方指责别人的确是一件爽快的事。更重要的是网络冷暴力所造成的后果往往难以追查，毕竟法不责众，犯错的是一批人而不是一个人。这个责任无法落实到谁头上去。</p><h2 id="我们所向往的自由"><a href="#我们所向往的自由" class="headerlink" title="我们所向往的自由"></a>我们所向往的自由</h2><p>​    自由宣言里对自由的定义是“在不伤害别人的前提下，你所做的一切都是正确的”。遗憾的是很少有人在发表自己看法时能够想起这句定义。在网络这个目前最开放的平台上，许多人努力寻求自由，却借着自由之名做着无尽伤害他人的事。这就像往往我们渴望公平，又希望自己拥有并利用那些不公平的力量；我们渴望尊重，却总在话里话外表现出对他人的不尊重；我们渴望得到而很少付出，却总在抱怨别人付出的太少……我们所做的一切，并不是自由，只是在扼杀自由所带来的种种可能而已。<br>​        我们对互联网最大的贡献，不过是我们每个人都是一个普通用户而已。而我们如果还想让这个世界更繁荣快乐一些，对别人的肯定和宽容是不是更重要呢？文章开头提到的那位在国内被称为“大神”的网友在《寄生前夜 第三次生日》破解遇到瓶颈后又一次出现，玩家们又一次玩到了最新的免费游戏。经过失去再度拥有，让很多人的改变了自己的言论。这不禁让我想起当Dark Alex宣布自己退出破解界不再研发自制系统的时候，在中文论坛里看到那许多叫嚣着“DA大神已经不行了”，“快滚吧，那么久都不更新系统”的声音。在这些Dark Alex看不懂的中文帖子里，我小心翼翼地写上“感谢你这么多年来的辛勤工作，让我们玩到了那么多好游戏”这样一句话。今天我在这里又一次说出来，觉得这样的话每一个字都没有错，并认为这才是对互联网共享精神最大的尊重。</p><blockquote><p>原文链接：<a href="http://news.duowan.com/YD/ctm32/index.html" target="_blank" rel="noopener">http://news.duowan.com/YD/ctm32/index.html</a></p><p>作者：文/周行文 编辑/Erisu 文光</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“我想让这世界越来越好，可是完全不知道怎么去做。”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="短文" scheme="https://blog.popstk.top/tags/%E7%9F%AD%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>悟空:我只能在如来的手心奔跑</title>
+    <link href="https://blog.popstk.top/2019/02/14/sunwukong/"/>
+    <id>https://blog.popstk.top/2019/02/14/sunwukong/</id>
+    <published>2019-02-14T08:48:34.000Z</published>
+    <updated>2019-12-15T06:19:47.463Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一场轮回，一场悲剧，一场戏。</p></blockquote><a id="more"></a><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>腊月初八，八戒死了。</p><p>八戒死在人间一处佛坛，佛坛位于百花深处，人迹罕至。天兵找到他的尸体时，他的猪牙上还挂着半个鸡腿。</p><p>但他的胸膛，已如百花绽放。</p><p>消息来到我这儿时，已不知被倒换了几手，有人传是因公殉职，也有人说是惨遭毒手。但无论哪一种，都让我心情复杂。</p><p>腊月广寒宫，月光凄冷如飘雪。烧刀子滚烫火辣，八戒高举琉璃杯。</p><p>“哪吒，我老猪要干件大事。”</p><p>“什么大事？”</p><p>八戒冲我冷笑几声。“佛曰，不可说。”</p><p>随后他将杯中酒一饮而尽，高喝一声。“嫦娥仙子，温酒咯！”</p><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>八戒的骨灰洒在广寒宫，嫦娥为其披麻戴孝，手中扬起的尘灰恰如月影冷凄，随寒风飘落。</p><p>玄奘的佛号声声震天，沙和尚的恸哭天地同悲。唯有猴子，像个没事人一般，依着广寒宫的桂花树，哼着不知名的小曲。</p><p>“猴子，你师弟死了。”我提醒着他。</p><p>猴子愣了一下，随后茫然的点点头。“是啊，死了，可是万物都会死的。”</p><p>“可那是你师弟八戒！”我有些愠怒道。</p><p>“八戒也是万物。”猴子一本正经道。</p><p>他说完这句话，也不再与我辩驳，而是继续看着桂花树上的黄金叶，手摩挲着粗壮干裂的树皮。</p><p>猴子成佛之后，性情变了许多。</p><p>我上一次见猴子，是在火焰山。那时的牛魔王法力无边，猴子降他不得。满天神佛设下天罗地网，车轮缠斗，最后力所不及的魔王化为一头黄牛，被我的风火轮砸碎了牛角。</p><p>牛魔王大喊：“莫伤吾命！”</p><p>那一声大喊，我分明看见猴子哭了。</p><p>猴子落在重伤累累的牛魔王身边，眼神黯然，他摸着牛魔王的断角。</p><p>“老牛老牛，你别怪我，我也是迫不得已。”</p><p>我知猴子和他有一段旧恩，但神兵在前，这般说话终究不妥。我走近猴子，扯扯他的虎皮裙。</p><p>“猴子，慎言。”</p><p>老牛竭力的睁眼看了看猴子，最后又绝望的闭上。</p><p>猴子叹了口气，看向我道。“谢谢。”</p><p>我知他是感谢我未下杀手，我摇摇头。“兄弟，早点上路，取完真经，就真的是兄弟了。”</p><p>猴子没有言语。</p><p>猴子成佛那天，我要比猴子还要高兴。我飞上三十六重天，踏上凌霄宝殿。觥筹交错间，我看到了猴子的身影。</p><p>猴子没了金箍，也没了棒子，一身袈裟，打着佛号，言语之间皆是禅语，群宴宾客无不动容。</p><p>猴子成佛本是件开心的事，但那天我看到他维诺的样子，我没来由有个想法：他获得很多，失去更多。</p><h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>我到头来也没明白，八戒所谓的大事指的何事。</p><p>我去佛坛看过，位于傲来国，不过是一处普普通通的佛坛，周遭既无居民，又无僧侣，也不知是何人所建。查案的天将说，是八戒吃坏了东西，胃口溃烂爆体而亡。这个说法可笑的要命，有什么东西能吃坏一头猪的胃？</p><p>回到天宫后，小厮和我禀报，说半个时辰前有个大胡子和尚找我，神色匆匆，像是有什么急事。</p><p>“那和尚什么模样？”</p><p>“胡须满面，手持一个灯杖。”</p><p>我愣了一下，我知道那不是灯杖，是降妖宝杖，来者是金身罗汉菩萨沙悟净。</p><p>“他人呢？”</p><p>“等你不见，就先走了。”小厮如实禀报。他从怀里掏出一个紫色画卷，画卷上若隐若现一个圆环，显然是被下了某种封印。“这是客人留给你的，让我务必交到您的手里。”</p><p>我接过画卷，简略一看，竟看不出这封印的门道。我收起画卷，正待回屋仔细研究之时，却听见门府外传来阵阵脚步声。</p><p>我起身相迎，却见天兵天将堵住了我的府邸，为首一人正是家父李靖，他眉头紧皱的看着我。</p><p>“孩儿，你可曾看见金身罗汉菩萨沙悟净？”</p><p>我知瞒他不过，便如实以告，但诉说中，却隐瞒了紫色画卷之事。</p><p>李靖听后，并未有疑。他严肃道。“孩儿，若是之后看见沙悟净，勿要留情，定要将他缉拿归案！”</p><p>“父亲，为何？”我好奇道。</p><p>李靖面露恐惧。“他偷了玉帝的宝物，万死难赎……总之，如有遇见，不必回禀，直下杀手便可。”</p><p>我大惊：竟然是这么大的过错？</p><p>想当年打碎了宫廷至宝琉璃盏，也不过是投胎凡间，这一次竟然要他神魂皆灭？</p><h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>天兵天将集体出动，奈何沙僧菩萨之体，也抵挡不过。我亲临了捕获沙僧的现场，满天神佛同时出手，将沙僧的菩萨金身打的粉碎。</p><p>濒死之际，他没有看我，而是仰天长啸。</p><p>“大师兄！”</p><p>他喊完这句话，我看向身旁的斗战胜佛孙悟空。他面无表情，从天而降，一掌打碎了沙僧的天灵盖。</p><p>回到府邸的两天里，我过得也惶惶不安，我看着手上的紫色画卷，突然有一种预感：这便是沙僧偷来的宝物。</p><p>我的小厮十分忠诚，几经仙人拷问终究是把秘密藏了下来。</p><p>沙僧为什么把这个东西给我？我又能帮助他什么？</p><p>我看着画卷上的紫色封印，毫无头绪。</p><p>这处封印，显然是沙悟净为画卷加上的。至于具体原因，恐怕是用封印提示我一些隐秘的事情。</p><p>他要提示我什么东西呢？</p><p>与这个老实的大和尚相关的事物少之又少，西行之路上仿佛只有任劳任怨一个形象。不知怎地，我突然想到沙悟净在濒死之际的一声呐喊。</p><p>“大师兄！……”</p><p>可是他明知道，他的大师兄不会救他，他的大师兄已经是跳出三界的佛陀。</p><p>又或者，那句话并不是对他说的。</p><p>我灵光一闪，浑身被这个想法刺激的颤抖，也许这句话，是对着我说的？</p><p>我手持紫色画卷，慢慢念叨：“大师兄……”</p><p>紫光一闪，封印应声而碎。</p><h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>画轴里蹦出一副图画，那图上的地方我熟悉的很。</p><p>那是我和孙悟空第一次交手的地方。</p><p>花果山，水帘洞。</p><p>只不过这画大概是取经之后的景象，那漫山遍野，桃花盛开，万物复苏，唯独没有猴子。</p><p>花果山上下，没有一只猴子，听起来便可笑。</p><p>沙悟净临死托付之物，我不敢怠慢。我将图画收好，驾云向花果山飞去。没一会，便来到了花果山福地。</p><p>一条涧壑藤萝密，四面原堤草色新。正是百川会处擎天柱，万劫无移大地根。</p><p>花果山有条瀑布，瀑布后面有块石碑，石碑上该写着“美猴王”，旁边该还倒着一个“齐天大圣”的旗子。</p><p>我迈入瀑布内，却见水帘洞内空无一物。我正好奇间，却见图画紫光大盛，瞬间，图画应声而随，我眼前的场景天旋地转，待我回过神来，已是别一番天地。</p><p>“这……这是哪？”</p><p>鬼哭狼嚎，人间炼狱。</p><p>在我面前有一个瘦小的躯体，几条手腕粗细的铁链贯穿了哪躯体的琵琶骨，一把飞剑来回贯穿，直把躯体穿的支离破碎。</p><p>“你……你是？”我大惊失色。</p><p>这……这该是一种怎样的惩罚？</p><p>那躯体冷笑几声。</p><p>“呵呵，来者何人？俺老孙是齐天大圣孙悟空！”</p><h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>不，不可能的！孙悟空不是早就成佛了？</p><p>我看着这漆黑的身躯，身子骨不知觉的颤抖着，寒冷和恐惧甚至钻到我的牙缝里，上下牙正不断的摩擦打颤。</p><p>“哪吒？”他看了我一眼，惊异道“怎么是你？”</p><p>“是，是我。”</p><p>“你怎么来的？”那人问道。“往常都是玉皇小儿一个人来，看着我受苦做乐。难道你是玉帝小儿派来的？不……不会，玉帝派谁也不会派你。”</p><p>令人惊恐的是，尽管我十分不想相信，但此人，或许真的是孙悟空。</p><p>那成佛的又是谁？</p><p>我尽量让自己平静下来，用神通打碎了飞剑。</p><p>“你说，你为什么会在这里？”</p><p>“我……我为什么会在这里？”猴子怒极反笑。“当年我和玉帝约定，只要我护送唐僧西行取经，就保我妖族一方昌盛。为此，我不惜害了我的兄弟牛魔王……却不料这狗娘养的出尔反尔，将我的灵魂剥碎成六耳和我两部分，把那个反叛的我关押在这里，受尽摧残，让六耳成佛成圣，终生做一条走狗……”</p><p>我心头大震，怪不得成为斗战胜佛后的猴子如此平静，竟是灵魂被切割成两个部分？</p><p>我按捺住心中的震惊，为他徐徐讲述猴子成佛后的事情，当我讲到八戒和悟净先后遇害时，我看着眼前的猴子磨碎了自己的牙齿。</p><p>“呆子，老沙……是我对不住你们！是我对不住你们！”猴子声泪俱下。</p><p>至此想来，八戒和悟净早已发现了端倪，只不过在行动中败露，惨遭毒手。</p><p>我努力让自己保持清醒，希望自己的理智给自己一个清晰的判断。</p><p>“哪吒，你放了我，我要给他们两个人报仇……我求求你，给我一次机会……”猴子的声音喑哑，显然，他是压抑着自己的滔天怒火。</p><p>“我，我还不能确定。”我实话实说。</p><p>“哦……这样啊，那你往里面看看。”猴子笑了。“你看了就明白了。”</p><p>我不疑有他，顺着猴子的话向里面看着，正看见一个孩童遭遇着像猴子一样的对待，飞剑穿体，铁索身骨。我仔细看那孩童，竟越看越熟悉，竟觉得在哪里见过……</p><p>“别想了，那就是你，哪吒。”猴子开口了。</p><p>“你早就被玉帝分裂灵魂了，现在住在你这身莲藕里的，不过也只是一个忠犬的灵魂，而最早那个大闹东海龙宫，拉开轩辕之弓的哪吒，就是你眼前的这个孩童啊！”</p><p><strong>“现在，你还要不要放了我？”</strong></p><h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>三十三重天天崩地裂，凌霄宝殿摇摇欲坠。</p><p>那是一根久违的金色棒子，再一次迎头砸向了五百年平静的宫殿。</p><p>五百年前的他，不过是大闹天宫，想做一只猴儿，去那人世间走走看看。而这一次，他杀意已决。</p><p>八戒的死，沙和尚的死……</p><p>他不能再忍了，五百年前他的容忍，害死了自己的猴子猴孙，至亲兄弟。五百年后，他容忍的因却依旧创造着恶果。</p><p>“如来！玉帝！”</p><p>三界之间，他狂吼着。</p><p>他一棍子敲碎了巨灵神的脑壳，一脚踹死了二郎神的狗。二十八星宿联手迎敌，却被这猴子打的支离破碎。</p><p>“三太子呢？快去请三太子！”李靖放声高喊道。</p><p>“大人，三太子不再！这……这该如何是好？”</p><p>西方灵山，一僧人轻捻佛珠，双泪两行。</p><p>“回来了，是他回来了。”</p><p>天庭内斗早已衰弱之极，强如三虚早已神游海外。那所谓的无坚不摧凌霄殿，终于迎来了前所未有的威胁和挑战。</p><p>孙悟空将李靖打下云头，一步一个血脚印，踏进了空无一人的宝殿。殿前正坐着玉皇大帝，他面露恐惧，却又稳稳的坐在龙椅上。</p><p>“怎么，来不及请如来么？”孙悟空笑了，满脸是血的猴脸咧出一个痛苦的笑容。“何必呢？玉帝，何必呢？”</p><p>“何必？”玉帝也笑了。</p><p>他走下椅子，从地上捡起一枚丹药。“你看见这个丹药了么？吃一颗，就能法力大增，延年益寿。你想要神妖平等……你知道这丹药是用什么做的么？”</p><p>孙悟空未发一言。</p><p>玉帝继续狂笑着。</p><p>“是牛魔王的骨髓。”</p><p>孙悟空动了。</p><p>“砰……”</p><p>这一棒被另一只猴子抬手挡住。</p><p>玉皇大帝哈哈大笑。“你们斗吧，斗吧。孙悟空，你不过是一只猴子，怎么能斗的过我？”</p><p>玉皇大帝走出宝殿，斗战胜佛和孙悟空却依旧僵持在原地。</p><p>“你要拦我？”猴子冷笑道。</p><p>六耳叹了口气。“对不起了大圣，我自出生起，就是为了拦你。”</p><p>“你甘愿做一条狗？”</p><p>“大圣，我只能做一条狗。”</p><p>转瞬间，尘土飞扬，宝殿炸裂，火红的烟花绽放在东方的云朵，在西方灵山，一名僧侣的念珠应声而碎。</p><p>“善哉……善哉……”</p><h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><p>猴子死后，天庭大兴土木，准备为天宫重建一个更恢弘的凌霄宝殿。玉帝没有办法，只能暂居灵山。本来玉帝兴致勃勃的想搞一个论功行赏会，最终发现，那些真的参战的神仙基本都战死了。</p><p>我没参战，逃过一劫。</p><p>玉帝手下的武将并不多，我算头号种子。现在武将稀薄，我的身价更高，他努了努嘴想了半天，终究是没说一句责怪的话。</p><p>“玉帝，臣还有一事禀报。”</p><p>“讲。”玉帝颇有不悦。</p><p>“是关于紫色画卷的，这里人多嘴杂……”</p><p>玉帝听到紫色画卷四个字，浑身一震。他赶忙说道：“你们先下去吧，哪吒，你上前来！”</p><p>众婢女小厮纷纷退下。</p><p>玉帝狐疑的冲我眨眨眼。“哪吒……你真的知道那画卷在哪？”</p><p>我走近玉帝，眼里闪出一丝青光。</p><p><strong>“当然了，不然……你以为我是谁啊？”</strong></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>已是那场暴乱的许多年。</p><p>故地重游，我重新来到花果山。山清水秀，绿意盎然，生机勃勃，最重要的是，有许多猴子。</p><p>这些猴子都是花果山的原住民，暴乱之后，我跟阎罗王讨了回来。</p><p>玉帝死后，这天下便是我说了算。</p><p>出乎意料的，三清并没有为难我。从海外归来，他们对我微微一笑。</p><p>“三太子不必多虑，这是玉帝的劫数。”</p><p>他们收下了玉帝的魂魄，放入太虚，很多很多年后，玉帝将从这里重生。这是一场轮回，花开花落，终有寂时，万物不例外，玉帝也是万物。</p><p>在玉帝轮回的时间里，我突然有了大把的空闲。我重建了花果山，把这里打造成一座妖山，凡是醉心修炼，得望天道的妖怪，都在这里有一席之地。得道后，也将上天任职，谋福一方。</p><p>猴子，神妖终于归途。我想，这也该是你的本意吧。</p><p>闲暇时，我经常来花果山转转，说不上来原因，我是打心眼里喜欢这个地方。</p><p>也许是因为，这里曾经有一个不甘而反叛的灵魂。</p><p>你看这妖界，终如你所愿。虽然还有很多东西待需完善，但总比你在的那个黑暗无道的世界好的太多。</p><p>这天，我依旧在花果山看景，想着你通天的传奇，不由落寞。</p><p>突然一只牛精大叫起来。“三太子，这石头成精了！生了个孩子！”</p><p>我浑身一震。“你说什么？在哪？”</p><p>牛精遥手一指。“那儿，在那儿！”</p><p>我飞快的赶往山顶，正看见一只猴子和猴群打成一片。那猴子看着猴群，张牙舞爪的喊道。“来啊，我要做你们的大王！听见了么？”</p><p>那猴子看见我，也不害怕。“喂，你这娃娃，看什么看？讨打么？”</p><p>我看着故人相貌，一时百感交集。</p><p>“你…你…”</p><p>“你什么你！”猴子大叫道。“要打就打！墨迹什么！…哎等会，我去找个兵器！”</p><p>“你…”我哈哈一笑。“好你个猴儿！让我等的好苦！你要打是吧？来啊！”</p><p>花开花落，因果循环，没想到是我想的太多。漫漫时空，浩荡银河，怎么会只有一个孙悟空呢？</p><p>地上嬉笑打闹，天空中飘一朵彩云。彩云上坐着一个和尚，手指捻珠，面露微笑，轻轻低语。</p><p>“南无阿弥陀佛”…</p><blockquote><p>原文链接：<a href="https://weibo.com/ttarticle/p/show?id=2309404314159083821453" target="_blank" rel="noopener">https://weibo.com/ttarticle/p/show?id=2309404314159083821453</a><br>作者：<a href="https://weibo.com/u/5672850242" target="_blank" rel="noopener">洛可二哥</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;一场轮回，一场悲剧，一场戏。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="小说" scheme="https://blog.popstk.top/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNSCrypt</title>
+    <link href="https://blog.popstk.top/2019/02/08/dnscrypt/"/>
+    <id>https://blog.popstk.top/2019/02/08/dnscrypt/</id>
+    <published>2019-02-08T04:06:33.000Z</published>
+    <updated>2019-12-15T06:19:47.439Z</updated>
+    
+    <content type="html"><![CDATA[<p>dnscrypt使用的简单记要。</p><a id="more"></a><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote><p>DNSCrypt is a protocol that authenticates communications between a DNS client and a DNS resolver. It prevents DNS spoofing. It uses cryptographic signatures to verify that responses originate from the chosen DNS resolver and haven’t been tampered with.</p></blockquote><p>DNSCrypt是一种用来加密与DNS服务器通信的协议，如防止运营商的DNS劫持，广告跟踪植入，保护个人隐私。</p><p>项目地址：<a href="https://dnscrypt.info/" target="_blank" rel="noopener">https://dnscrypt.info/</a></p><p>实现列表：<a href="https://dnscrypt.info/implementations/" target="_blank" rel="noopener">https://dnscrypt.info/implementations/</a></p><h2 id="dnscrypt-proxy"><a href="#dnscrypt-proxy" class="headerlink" title="dnscrypt-proxy"></a>dnscrypt-proxy</h2><p><a href="https://github.com/jedisct1/dnscrypt-proxy" target="_blank" rel="noopener">dnscrypt-proxy</a> 是dnscrypt的一个实现，可以从<a href="https://github.com/jedisct1/dnscrypt-proxy/releases" target="_blank" rel="noopener">这里</a>下载各大平台的预编译二进制文件。</p><p>下载windows版本压缩包解压后，编辑配置文件<code>dnscrypt-proxy.toml</code>，或者使用<a href="https://github.com/CNMan/dnscrypt-proxy-config" target="_blank" rel="noopener">dnscrypt-proxy-config</a>，它是个可以提高解析国内域名速度的分享配置。将<code>dnscrypt-proxy-config</code>的配置文件拷贝到其目录下，使用管理员权限运行<code>service-install.bat</code>安装服务，默认监听地址为<code>0.0.0.0:53</code>。</p><p>安装成功后将自动启动服务，可见以下服务正在运行：</p><p><img src="/passages/dnscrypt/1549707647448.png" alt="1549707647448"></p><p>最后，将本机的DNS设置为<code>127.0.0.1</code>，配置完成。</p><h2 id="DNSmaqs"><a href="#DNSmaqs" class="headerlink" title="DNSmaqs"></a>DNSmaqs</h2><p><strong>todo</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;dnscrypt使用的简单记要。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="dns" scheme="https://blog.popstk.top/tags/dns/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代理记录</title>
+    <link href="https://blog.popstk.top/2019/01/01/Proxy/"/>
+    <id>https://blog.popstk.top/2019/01/01/Proxy/</id>
+    <published>2019-01-01T12:42:07.000Z</published>
+    <updated>2019-12-15T06:19:47.437Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录一下，用过的一些代理技术。</p><a id="more"></a><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><h4 id="Socks5-和-Http"><a href="#Socks5-和-Http" class="headerlink" title="Socks5 和 Http"></a>Socks5 和 Http</h4><p>这两种协议，几乎没有保密性，所以通常是作为本机代理的一端，同时也是一个应用程序提供代理功能时，最常要求的接口。可以看到一个应用程序，提供代理时，总是要求用户填写http或者socks5配置。</p><p>应用程序代理  —-http/socks5 —&gt;   Proxy  —– other protocol —&gt;   Network</p><h4 id="Shadowsocks-Shadowsockssr"><a href="#Shadowsocks-Shadowsockssr" class="headerlink" title="Shadowsocks/Shadowsockssr"></a>Shadowsocks/Shadowsockssr</h4><p><a href="https://github.com/shadowsocks" target="_blank" rel="noopener">shadowsocks</a> 缩写ss，最流行的加密代理协议，很多代理工具都支持这种协议，没必要一定要用纯shadowsocks客户端。</p><p><a href="https://github.com/shadowsocksrr" target="_blank" rel="noopener">shadowsockssr</a>缩写ssr，是shadowsocks的一个改进加密协议版本，也兼容shadowsocks，支持这种协议的工具不多见。</p><h4 id="Vmess"><a href="#Vmess" class="headerlink" title="Vmess"></a>Vmess</h4><p><a href="https://www.v2ray.com/developer/protocols/vmess.html" target="_blank" rel="noopener">VMess</a> 是 V2Ray 原创的加密通讯协议。</p><h4 id="MTProxy"><a href="#MTProxy" class="headerlink" title="MTProxy"></a>MTProxy</h4><p><a href="https://github.com/TelegramMessenger/MTProxy" target="_blank" rel="noopener">mtproxy</a>是Telegram 专用的代理协议。</p><h4 id="KCP"><a href="#KCP" class="headerlink" title="KCP"></a>KCP</h4><blockquote><p>KCP是一个快速可靠协议，能以比 TCP浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%，且最大延迟降低三倍的传输效果。纯算法实现，并不负责底层协议（如UDP）的收发，需要使用者自己定义下层数据包的发送方式，以 callback的方式提供给 KCP。 连时钟都需要外部传递进来，内部不会有任何一次系统调用。</p></blockquote><p>简单的说，这是一个致力于降低延迟的协议，可以搭配上面的加密协议一起使用。</p><p><a href="https://github.com/skywind3000/kcp" target="_blank" rel="noopener">https://github.com/skywind3000/kcp</a></p><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="Shadowsocks-Shadowsockssr-1"><a href="#Shadowsocks-Shadowsockssr-1" class="headerlink" title="Shadowsocks/Shadowsockssr"></a>Shadowsocks/Shadowsockssr</h4><p>shadowsocks各平台的server/client，可以从以下链接找到：<br><a href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients</a><br><a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="noopener">https://shadowsocks.org/en/download/clients.html</a><br><a href="https://congcong0806.github.io/2018/04/20/SS/" target="_blank" rel="noopener">https://congcong0806.github.io/2018/04/20/SS/</a></p><p>shadowsockssr就不多了：<br><a href="https://github.com/Ssrbackup/shadowsocks-rss" target="_blank" rel="noopener">https://github.com/Ssrbackup/shadowsocks-rss</a></p><h4 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h4><p>支持Vmess、MTProto、shadowsocks</p><p><a href="https://github.com/v2ray" target="_blank" rel="noopener">github</a> <a href="https://www.v2ray.com/" target="_blank" rel="noopener">官网</a> <a href="https://github.com/v2ray/v2ray-core/issues/429" target="_blank" rel="noopener">关于 vmess 传入配置中 clients id 和 alterid、level 的疑惑</a></p><h4 id="Glider"><a href="#Glider" class="headerlink" title="Glider"></a>Glider</h4><blockquote><p>glider is a forward proxy with multiple protocols support, and also a dns forwarding server with ipset management features(like dnsmasq).</p></blockquote><p>又一个正向代理工具，还支持dns转发，客户端支持这些协议：<br>shadowsocks、shadowsockssr、vmess、kcp</p><p><a href="https://github.com/nadoo/glider" target="_blank" rel="noopener">https://github.com/nadoo/glider</a></p><h4 id="Cow"><a href="#Cow" class="headerlink" title="Cow"></a>Cow</h4><blockquote><p>COW 的设计目标是自动化，理想情况下用户无需关心哪些网站无法访问，可直连网站也不会因为使用二级代理而降低访问速度。</p></blockquote><p><a href="https://github.com/cyfdecyf/cow" target="_blank" rel="noopener">https://github.com/cyfdecyf/cow</a></p><h4 id="KcpTun"><a href="#KcpTun" class="headerlink" title="KcpTun"></a>KcpTun</h4><p>一个kcp协议的实现<br><a href="https://github.com/xtaci/kcptun" target="_blank" rel="noopener">https://github.com/xtaci/kcptun</a><br><a href="https://github.com/dfdragon/kcptun_gclient/" target="_blank" rel="noopener">https://github.com/dfdragon/kcptun_gclient/</a></p><h4 id="Brook"><a href="#Brook" class="headerlink" title="Brook"></a>Brook</h4><p>支持Brook、Stream Brook、shadowsocks、SOCKS<br><a href="https://github.com/txthinking/brook" target="_blank" rel="noopener">https://github.com/txthinking/brook</a></p><h4 id="Goflyway"><a href="#Goflyway" class="headerlink" title="Goflyway"></a>Goflyway</h4><p>基于 HTTP，比ss要高一层，更类似于ssr 的 http 混淆模式<br>因为是基于应用层的 HTTP，传输肯定会有 overhead，性能不用指望</p><p><a href="https://github.com/coyove/goflywa" target="_blank" rel="noopener">https://github.com/coyove/goflywa</a></p><h4 id="OutLine"><a href="#OutLine" class="headerlink" title="OutLine"></a>OutLine</h4><p>Outline 可让新闻机构轻松地在自己的服务器上设置企业虚拟专用网络 (VPN)，以便更安全地连接到互联网并确保内部通讯隐私。</p><p>Outline 是一款完全开源的应用，其代码已经由 Radically Open Security 团队充分审核。</p><p><a href="https://www.getoutline.org/" target="_blank" rel="noopener">https://www.getoutline.org/</a></p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="RUDP"><a href="#RUDP" class="headerlink" title="RUDP"></a>RUDP</h4><p>tcp做了这几件事：</p><ul><li><p>通过序列号和基于确认的超时重传机制，为上层提供了可靠的字节流服务；</p></li><li><p>通过滑动窗口、拥塞窗口提供了流量控制；</p></li><li><p>默认情况下，为了有效利用带宽，tcp的报文一次会尽量携带更多的数据。但与此同时，为了避免IP层的分片，又不会发送超过MTU大小的数据包。</p></li></ul><h4 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h4><p>浏览器代理插件，支持规则列表。</p><h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><p>SwitchyOmega -&gt;  cow -&gt; glider —–wall—&gt; server</p><h4 id="配置规则"><a href="#配置规则" class="headerlink" title="配置规则"></a>配置规则</h4><h5 id="Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi-ShadowRay-、Surge-的配置规则文件"><a href="#Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi-ShadowRay-、Surge-的配置规则文件" class="headerlink" title="Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi(ShadowRay)、Surge 的配置规则文件"></a>Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi(ShadowRay)、Surge 的配置规则文件</h5><p><a href="https://github.com/ConnersHua/Profiles" target="_blank" rel="noopener">https://github.com/ConnersHua/Profiles</a></p><h5 id="基于gfwlist的多种代理软件配置文件生成工具"><a href="#基于gfwlist的多种代理软件配置文件生成工具" class="headerlink" title="基于gfwlist的多种代理软件配置文件生成工具"></a>基于gfwlist的多种代理软件配置文件生成工具</h5><p><a href="https://github.com/JinnLynn/genpac" target="_blank" rel="noopener">https://github.com/JinnLynn/genpac</a></p><p>支持自定义规则，目前可生成的格式有pac, dnsmasq, wingy</p><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://www.hinwen.com/27514.html" target="_blank" rel="noopener">收集整理科学上网(GFW)的资料和工具</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下，用过的一些代理技术。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ss" scheme="https://blog.popstk.top/tags/ss/"/>
+    
+      <category term="ssr" scheme="https://blog.popstk.top/tags/ssr/"/>
+    
+      <category term="v2ray" scheme="https://blog.popstk.top/tags/v2ray/"/>
+    
+  </entry>
+  
+</feed>

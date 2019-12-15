@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="popstk的博客">
+    <meta name="keyword" content="popstk">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Frequently Asked Questions - Types - popstk的博客 | popstk&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 有时摸鱼，有时写代码 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Mark</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Is-Go-an-object-oriented-language"><span class="toc-text">Is Go an object-oriented language?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-is-there-no-type-inheritance"><span class="toc-text">Why is there no type inheritance?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-doesn’t-type-T-satisfy-the-Equal-interface"><span class="toc-text">Why doesn’t type T satisfy the Equal interface?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Can-I-convert-T1-to-T2-if-T1-and-T2-have-the-same-underlying-type"><span class="toc-text">Can I convert []T1 to []T2 if T1 and T2 have the same underlying type?</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 有时摸鱼，有时写代码 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Frequently Asked Questions - Types
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-02-24 19:56:56</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#go" title="go">go</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#FAQ" title="FAQ">FAQ</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Types" title="Types">Types</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>golang官方的FAQ，包含了初学者常见的一些问题和解答。整理下翻译和自己的见解。</p>
+<blockquote>
+<p> <a href="https://golang.org/doc/faq#types" target="_blank" rel="noopener">https://golang.org/doc/faq#types</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Is-Go-an-object-oriented-language"><a href="#Is-Go-an-object-oriented-language" class="headerlink" title="Is Go an object-oriented language?"></a>Is Go an object-oriented language?</h2><blockquote>
+<p>Yes and no. Although Go has types and methods and allows an object-oriented style of programming, there is no <strong>type hierarchy</strong>. The concept of “interface” in Go provides a different approach that we believe is easy to use and in some ways more general. There are also ways to embed types in other types to provide something analogous—but not identical—to <strong>subclassing</strong>. Moreover, methods in Go are more general than in C++ or Java: they can be defined for any sort of data, even built-in types such as plain, “unboxed” integers. They are not restricted to structs (classes).<br>Also, the lack of a type hierarchy makes “objects” in Go feel much more lightweight than in languages such as C++ or Java.</p>
+</blockquote>
+<p>既是也不是。尽管Go拥有类型和方法，也允许面向对象风格的编程，但它没有<strong>类型层级</strong>。 在Go中“接口”的概念提供了不同的方法，我们相信它易于使用且在某些方面更通用。 也有一些在其它类型中嵌入类型的方法，来提供类似（而非完全相同）的东西进行子类化。 此外，Go中的方法比C++或Java中的更通用：它们可被定义为任何种类的数据。 甚至是像普通的“未装箱”整数这样的内建类型。它们并不受结构（类）的限制。<br>此外，类型层级的缺失也使Go中的“对象”感觉起来比C++或Java的更轻量级。</p>
+<h2 id="Why-is-there-no-type-inheritance"><a href="#Why-is-there-no-type-inheritance" class="headerlink" title="Why is there no type inheritance?"></a>Why is there no type inheritance?</h2><blockquote>
+<p>Rather than requiring the programmer to declare ahead of time that two types are related, in Go a type automatically satisfies any interface that specifies a subset of its methods. Besides reducing the bookkeeping, this approach has real advantages. Types can satisfy many interfaces at once, without the complexities of traditional multiple inheritance. Interfaces can be very lightweight—an interface with one or even zero methods can express a useful concept. Interfaces can be added after the fact if a new idea comes along or for testing—without annotating the original types. Because there are no explicit relationships between types and interfaces, there is no type hierarchy to manage or discuss.</p>
+</blockquote>
+<p>type inheritance - 类型继承</p>
+<p>像需要程序员提前声明两个类型的关联，在Go中类型会自动满足任何接口， 以此实现其方法的子集。除了减少记账式编程外，这种方法拥有真正的优势。 类型可立刻满足一些接口，而没有传统多重继承的复杂性。 接口可以非常轻量——带一个甚至零个方法的接口能够表达一个有用的概念。 若出现了新的想法，或为了测试目的，接口其实可以在以后添加——而无需注释掉原来的类型。 由于在类型和接口之间没有明确的关系，也就无需管理或讨论类型层级。</p>
+<blockquote>
+<p>It takes some getting used to but this implicit style of type dependency is one of the most productive things about Go.</p>
+</blockquote>
+<p>它需要一段时间来适应，但这种隐式的类型依赖是Go中最具生产力的东西之一。</p>
+<h2 id="Why-doesn’t-type-T-satisfy-the-Equal-interface"><a href="#Why-doesn’t-type-T-satisfy-the-Equal-interface" class="headerlink" title="Why doesn’t type T satisfy the Equal interface?"></a>Why doesn’t type T satisfy the Equal interface?</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Equaler <span class="keyword">interface</span> &#123;</span><br><span class="line">    Equal(Equaler) <span class="keyword">bool</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> T <span class="keyword">int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T)</span> <span class="title">Equal</span><span class="params">(u T)</span> <span class="title">bool</span></span> &#123; <span class="keyword">return</span> t == u &#125; <span class="comment">// does not satisfy Equaler</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> T2 <span class="keyword">int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T2)</span> <span class="title">Equal</span><span class="params">(u Equaler)</span> <span class="title">bool</span></span> &#123; <span class="keyword">return</span> t == u.(T2) &#125;  <span class="comment">// satisfies Equaler</span></span><br><span class="line"></span><br><span class="line">​<span class="string">`</span></span><br></pre></td></tr></table></figure>
+<p>在Go中，类型系统并不提升 Equal 的实参，那是程序员的责任</p>
+<p>​<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Opener <span class="keyword">interface</span> &#123;</span><br><span class="line">   Open() Reader</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t T3)</span> <span class="title">Open</span><span class="params">()</span> *<span class="title">os</span>.<span class="title">File</span>  // <span class="title">does</span> <span class="title">not</span> <span class="title">satisfy</span> <span class="title">Opener</span></span></span><br></pre></td></tr></table></figure></p>
+<p>在Go中，T3 并不满足 Opener，尽管它在另一种语言中可能满足。<br>Go的类型系统确实为程序员做的更少， 子类型化的缺乏使关于接口满足的规则非常容易制订： 函数的名字和签名完全就是那些接口吗？Go的规则也容易高效地实现。</p>
+<p>即接口满足的规则: 函数的名字和签名完全就是那些接口</p>
+<h2 id="Can-I-convert-T1-to-T2-if-T1-and-T2-have-the-same-underlying-type"><a href="#Can-I-convert-T1-to-T2-if-T1-and-T2-have-the-same-underlying-type" class="headerlink" title="Can I convert []T1 to []T2 if T1 and T2 have the same underlying type?"></a>Can I convert []T1 to []T2 if T1 and T2 have the same underlying type?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type T1 int</span><br><span class="line">type T2 int</span><br><span class="line">var t1 T1</span><br><span class="line">var x = T2(t1) // OK</span><br><span class="line">var st1 []T1</span><br><span class="line">var sx = ([]T2)(st1) // NOT OK</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>In Go, types are closely tied to methods, in that every named type has a (possibly empty) method set. The general rule is that you can change the name of the type being converted (and thus possibly change its method set) but you can’t change the name (and method set) of elements of a composite type. Go requires you to be explicit about type conversions.</p>
+</blockquote>
+<p>在go语言中，类型跟方法紧密相连，因为每种具名类型都有一个（可能是空的）方法集。一条通用的规则：你可以转换类型（因此改变了方法集），但无法转换在混合类型里的元素。go要求显式的转换。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/popstk">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://popstk.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="popstk的博客">
+    <meta name="keyword" content="popstk">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        代理记录 - popstk的博客 | popstk&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 有时摸鱼，有时写代码 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.png" />
+        </div>
+        <div class="name">
+            <i>Mark</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#协议"><span class="toc-text">协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Socks5-和-Http"><span class="toc-text">Socks5 和 Http</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shadowsocks-Shadowsockssr"><span class="toc-text">Shadowsocks/Shadowsockssr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vmess"><span class="toc-text">Vmess</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MTProxy"><span class="toc-text">MTProxy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KCP"><span class="toc-text">KCP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具"><span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Shadowsocks-Shadowsockssr-1"><span class="toc-text">Shadowsocks/Shadowsockssr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#V2ray"><span class="toc-text">V2ray</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Glider"><span class="toc-text">Glider</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cow"><span class="toc-text">Cow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KcpTun"><span class="toc-text">KcpTun</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brook"><span class="toc-text">Brook</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Goflyway"><span class="toc-text">Goflyway</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OutLine"><span class="toc-text">OutLine</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RUDP"><span class="toc-text">RUDP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SwitchyOmega"><span class="toc-text">SwitchyOmega</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最佳实践"><span class="toc-text">最佳实践</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置规则"><span class="toc-text">配置规则</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi-ShadowRay-、Surge-的配置规则文件"><span class="toc-text">Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi(ShadowRay)、Surge 的配置规则文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基于gfwlist的多种代理软件配置文件生成工具"><span class="toc-text">基于gfwlist的多种代理软件配置文件生成工具</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 有时摸鱼，有时写代码 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        代理记录
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-01 20:42:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#ss" title="ss">ss</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#ssr" title="ssr">ssr</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#v2ray" title="v2ray">v2ray</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>记录一下，用过的一些代理技术。</p>
+<a id="more"></a>
+<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><h4 id="Socks5-和-Http"><a href="#Socks5-和-Http" class="headerlink" title="Socks5 和 Http"></a>Socks5 和 Http</h4><p>这两种协议，几乎没有保密性，所以通常是作为本机代理的一端，同时也是一个应用程序提供代理功能时，最常要求的接口。可以看到一个应用程序，提供代理时，总是要求用户填写http或者socks5配置。</p>
+<p>应用程序代理  —-http/socks5 —&gt;   Proxy  —– other protocol —&gt;   Network</p>
+<h4 id="Shadowsocks-Shadowsockssr"><a href="#Shadowsocks-Shadowsockssr" class="headerlink" title="Shadowsocks/Shadowsockssr"></a>Shadowsocks/Shadowsockssr</h4><p><a href="https://github.com/shadowsocks" target="_blank" rel="noopener">shadowsocks</a> 缩写ss，最流行的加密代理协议，很多代理工具都支持这种协议，没必要一定要用纯shadowsocks客户端。</p>
+<p><a href="https://github.com/shadowsocksrr" target="_blank" rel="noopener">shadowsockssr</a>缩写ssr，是shadowsocks的一个改进加密协议版本，也兼容shadowsocks，支持这种协议的工具不多见。</p>
+<h4 id="Vmess"><a href="#Vmess" class="headerlink" title="Vmess"></a>Vmess</h4><p><a href="https://www.v2ray.com/developer/protocols/vmess.html" target="_blank" rel="noopener">VMess</a> 是 V2Ray 原创的加密通讯协议。</p>
+<h4 id="MTProxy"><a href="#MTProxy" class="headerlink" title="MTProxy"></a>MTProxy</h4><p><a href="https://github.com/TelegramMessenger/MTProxy" target="_blank" rel="noopener">mtproxy</a>是Telegram 专用的代理协议。</p>
+<h4 id="KCP"><a href="#KCP" class="headerlink" title="KCP"></a>KCP</h4><blockquote>
+<p>KCP是一个快速可靠协议，能以比 TCP浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%，且最大延迟降低三倍的传输效果。纯算法实现，并不负责底层协议（如UDP）的收发，需要使用者自己定义下层数据包的发送方式，以 callback的方式提供给 KCP。 连时钟都需要外部传递进来，内部不会有任何一次系统调用。</p>
+</blockquote>
+<p>简单的说，这是一个致力于降低延迟的协议，可以搭配上面的加密协议一起使用。</p>
+<p><a href="https://github.com/skywind3000/kcp" target="_blank" rel="noopener">https://github.com/skywind3000/kcp</a></p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="Shadowsocks-Shadowsockssr-1"><a href="#Shadowsocks-Shadowsockssr-1" class="headerlink" title="Shadowsocks/Shadowsockssr"></a>Shadowsocks/Shadowsockssr</h4><p>shadowsocks各平台的server/client，可以从以下链接找到：<br><a href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients</a><br><a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="noopener">https://shadowsocks.org/en/download/clients.html</a><br><a href="https://congcong0806.github.io/2018/04/20/SS/" target="_blank" rel="noopener">https://congcong0806.github.io/2018/04/20/SS/</a></p>
+<p>shadowsockssr就不多了：<br><a href="https://github.com/Ssrbackup/shadowsocks-rss" target="_blank" rel="noopener">https://github.com/Ssrbackup/shadowsocks-rss</a></p>
+<h4 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h4><p>支持Vmess、MTProto、shadowsocks</p>
+<p><a href="https://github.com/v2ray" target="_blank" rel="noopener">github</a> <a href="https://www.v2ray.com/" target="_blank" rel="noopener">官网</a> <a href="https://github.com/v2ray/v2ray-core/issues/429" target="_blank" rel="noopener">关于 vmess 传入配置中 clients id 和 alterid、level 的疑惑</a></p>
+<h4 id="Glider"><a href="#Glider" class="headerlink" title="Glider"></a>Glider</h4><blockquote>
+<p>glider is a forward proxy with multiple protocols support, and also a dns forwarding server with ipset management features(like dnsmasq).</p>
+</blockquote>
+<p>又一个正向代理工具，还支持dns转发，客户端支持这些协议：<br>shadowsocks、shadowsockssr、vmess、kcp</p>
+<p><a href="https://github.com/nadoo/glider" target="_blank" rel="noopener">https://github.com/nadoo/glider</a></p>
+<h4 id="Cow"><a href="#Cow" class="headerlink" title="Cow"></a>Cow</h4><blockquote>
+<p>COW 的设计目标是自动化，理想情况下用户无需关心哪些网站无法访问，可直连网站也不会因为使用二级代理而降低访问速度。</p>
+</blockquote>
+<p><a href="https://github.com/cyfdecyf/cow" target="_blank" rel="noopener">https://github.com/cyfdecyf/cow</a></p>
+<h4 id="KcpTun"><a href="#KcpTun" class="headerlink" title="KcpTun"></a>KcpTun</h4><p>一个kcp协议的实现<br><a href="https://github.com/xtaci/kcptun" target="_blank" rel="noopener">https://github.com/xtaci/kcptun</a><br><a href="https://github.com/dfdragon/kcptun_gclient/" target="_blank" rel="noopener">https://github.com/dfdragon/kcptun_gclient/</a></p>
+<h4 id="Brook"><a href="#Brook" class="headerlink" title="Brook"></a>Brook</h4><p>支持Brook、Stream Brook、shadowsocks、SOCKS<br><a href="https://github.com/txthinking/brook" target="_blank" rel="noopener">https://github.com/txthinking/brook</a></p>
+<h4 id="Goflyway"><a href="#Goflyway" class="headerlink" title="Goflyway"></a>Goflyway</h4><p>基于 HTTP，比ss要高一层，更类似于ssr 的 http 混淆模式<br>因为是基于应用层的 HTTP，传输肯定会有 overhead，性能不用指望</p>
+<p><a href="https://github.com/coyove/goflywa" target="_blank" rel="noopener">https://github.com/coyove/goflywa</a></p>
+<h4 id="OutLine"><a href="#OutLine" class="headerlink" title="OutLine"></a>OutLine</h4><p>Outline 可让新闻机构轻松地在自己的服务器上设置企业虚拟专用网络 (VPN)，以便更安全地连接到互联网并确保内部通讯隐私。</p>
+<p>Outline 是一款完全开源的应用，其代码已经由 Radically Open Security 团队充分审核。</p>
+<p><a href="https://www.getoutline.org/" target="_blank" rel="noopener">https://www.getoutline.org/</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="RUDP"><a href="#RUDP" class="headerlink" title="RUDP"></a>RUDP</h4><p>tcp做了这几件事：</p>
+<ul>
+<li><p>通过序列号和基于确认的超时重传机制，为上层提供了可靠的字节流服务；</p>
+</li>
+<li><p>通过滑动窗口、拥塞窗口提供了流量控制；</p>
+</li>
+<li><p>默认情况下，为了有效利用带宽，tcp的报文一次会尽量携带更多的数据。但与此同时，为了避免IP层的分片，又不会发送超过MTU大小的数据包。</p>
+</li>
+</ul>
+<h4 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h4><p>浏览器代理插件，支持规则列表。</p>
+<h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><p>SwitchyOmega -&gt;  cow -&gt; glider —–wall—&gt; server</p>
+<h4 id="配置规则"><a href="#配置规则" class="headerlink" title="配置规则"></a>配置规则</h4><h5 id="Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi-ShadowRay-、Surge-的配置规则文件"><a href="#Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi-ShadowRay-、Surge-的配置规则文件" class="headerlink" title="Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi(ShadowRay)、Surge 的配置规则文件"></a>Clash、Kitsunebi、Quantumult、Shadowrocket、Pepi(ShadowRay)、Surge 的配置规则文件</h5><p><a href="https://github.com/ConnersHua/Profiles" target="_blank" rel="noopener">https://github.com/ConnersHua/Profiles</a></p>
+<h5 id="基于gfwlist的多种代理软件配置文件生成工具"><a href="#基于gfwlist的多种代理软件配置文件生成工具" class="headerlink" title="基于gfwlist的多种代理软件配置文件生成工具"></a>基于gfwlist的多种代理软件配置文件生成工具</h5><p><a href="https://github.com/JinnLynn/genpac" target="_blank" rel="noopener">https://github.com/JinnLynn/genpac</a></p>
+<p>支持自定义规则，目前可生成的格式有pac, dnsmasq, wingy</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://www.hinwen.com/27514.html" target="_blank" rel="noopener">收集整理科学上网(GFW)的资料和工具</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/popstk">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://popstk.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
